@@ -18,7 +18,7 @@ export default function Home() {
             Join our community today! Create an account or sign in to explore
             our website.
           </p>
-          <div className="mt-12 mb-8">
+          <div className="mt-8 mb-8">
             {/* <Link href="/SignUp" className="bg-aggie hover:bg-[#381717] text-white font-semibold px-6 py-6 rounded-xl mr-4 text-xl mr-9">
               Create Account
 
@@ -45,23 +45,6 @@ export default function Home() {
               Welcome to <span className="text-aggie">Prof Rate</span>, your go-to destination for candid and insightful reviews of professors of Texas A&M. Founded by a group of passionate students, our platform is dedicated to revolutionizing the way students choose their courses and professors. We believe that education is a collaborative effort, and students deserve a platform to report their experiences, helping others make informed decisions about their academic journey.
             </p>
 
-<<<<<<< HEAD
-            <h3 className="text-2xl font-semibold mt-6 mb-2">What Sets Us Apart?</h3>
-            <p>
-              Unlike other review platforms, we have invested in building a state-of-the-art system that collects more accurate data. At the end of each semester, we encourage students to provide detailed feedback on their professors and courses. Additionally, our intuitive interface simplifies the process of finding the best professors for your courses. Whether you're planning your upcoming semester or seeking information about your current instructors, we make accessing the right information a breeze.
-            </p>
-
-            <h3 className="text-2xl font-semibold mt-6 mb-2">Key Features</h3>
-            <p>
-              <strong>Search for Professors:</strong> Our user-friendly interface allows you to search for course names and provides you with information about the best professors for that course. Whether you're selecting classes for the upcoming semester or just curious about your current instructors, finding the right information is a breeze.
-            </p>
-            <p>
-              <strong>Specific Data Student Reviews:</strong> Our platform thrives on the feedback of students like you. We use student data to provide accurate feedback, giving you an inside look into teaching styles, course content, grading criteria, and overall classroom experiences.
-            </p>
-            <p>
-              <strong>Student Tips:</strong> Discover valuable tips and recommendations from students who have taken similar courses. Learn how to succeed in challenging classes or make the most of your educational experience.
-            </p>
-=======
         <h3 className="text-2xl font-semibold mt-6 mb-2">What Sets Us Apart?</h3>
         <p>
         Unlike other review platforms, we have invested in building a state-of-the-art system that utilizes more accurate and detailed data to more objectively match professors with students' preferences. At the end of each semester, Texas A&M University students are encouraged to provide detailed feedback on their professors and courses through AEFIS evaluations. The high response rate and inclusion of multiple features allow for dynamic personalization of ratings for each student. Further, our intuitive interface simplifies the process of finding the best professors for your courses. Whether you're planning your upcoming semester or seeking information about your current instructors, we make accessing the right information a breeze.       
@@ -77,7 +60,6 @@ export default function Home() {
         <p>
           <strong>Preferences and Personalization:</strong> Our algorithm calculates a weighted professor score based on your preferences input, creating unique ratings that are suited to your learning needs.
         </p>
->>>>>>> d36cd0390c889e5f3c3d30ee1e967b8ba3575ff7
 
             <h3 className="text-2xl font-semibold mt-6 mb-2">Our Mission</h3>
             <p>
