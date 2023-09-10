@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export default function Home() {
   return (
-    <main classNameName='bg-white'>
+    <main className='bg-white'>
 
       <div className="flex flex-col items-center justify-center p-12">
 
