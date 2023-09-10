@@ -4,6 +4,7 @@ import analysis
 import pandas as pd
 
 app = Flask(__name__)
+app.config["JSON_SORT_KEYS"] = False
 
 
 @app.route('/Temporary_Fetch/<course>/<feedback>/<learn>/<expectations>/<critical>/<diverse>/<clear>/<grade>', methods=['GET'])
@@ -12,11 +13,12 @@ def temp_ratings(course, feedback, learn, expectations, critical, diverse, clear
     course_info = course.split(" ")
     subject_code = course_info[0]
     course = course_info[1]
-    print(subject_code)
-    data = analysis.stats_for_project(course, subject_code, grade, expectations, learn, critical, clear, diverse, feedback)
 
-    print(data)
-    return "Hello"
+    data = analysis.stats_for_project(course, subject_code, grade, expectations, learn, critical, clear, diverse, feedback)
+    result_dict = data.set_index(data.index)['final_scoring_normal'].to_dict()
+
+    print(result_dict)
+    return result_dict
 
 
 # Once preferences are stored in sql database 

@@ -16,17 +16,17 @@ def stats_for_project(course, subject_code, grade_importance,expected_importance
 
     df = df.loc[:, keep_list]
 
-    df = df[df["course_number"] == course]
+    df = df[df["course_number"] == int(course)]
     df = df[df["subject_code"] == subject_code]
-    df['final_scoring'] = df.apply(lambda row: round((row['GPA'] * grade_importance + row['expected'] * expected_importance + row['objectives'] * objective_importance + row['criticalthinking'] * critical_importance + row['organizerranking'] * organization_importance+ row['diverse'] * diverse_importance + row['feedback'] * feedback_importance), 2), axis=1)
-    max_score = max(df['final_scoring'])
+    df['final_scoring'] = df.apply(lambda row: round((row['GPA'] * int(grade_importance) + row['expected'] * int(expected_importance) + row['objectives'] * int(objective_importance) + row['criticalthinking'] * int(critical_importance) + row['organizerranking'] * int(organization_importance) + row['diverse'] * int(diverse_importance) + row['feedback'] * int(feedback_importance)), 2), axis=1)
+    max_score = int(grade_importance) + int(expected_importance) + int(objective_importance) + int(critical_importance) + int(organization_importance) + int(feedback_importance) + int(diverse_importance)
     df['final_scoring_normal'] = df.apply(lambda row: round(5 * row['final_scoring'] / max_score, 2), axis=1)
-    df = df.sort_values(by='final_scoring', ascending=False)
     final_df=df.loc[:,["professor_name","final_scoring_normal"]]
     final_df = final_df.groupby(['professor_name']).mean()
-    df['final_scoring_normal'] = [round(i, 2) for i in df['final_scoring_normal']]
-    print("Choose Professor: " + final_df.index[0], "with score:", final_df.iloc[0].final_scoring_normal)
-    return(final_df.head(10))
+    final_df = final_df.sort_values(by='final_scoring_normal', ascending=False)
+    final_df['final_scoring_normal'] = [round(i, 2) for i in final_df['final_scoring_normal']]
+    #print("Choose Professor: " + final_df.index[0], "with score:", final_df.iloc[0].final_scoring_normal)
+    return(final_df)
 
 
-print(stats_for_project(221, 'MATH', 5,2,3,1,5,1,1))
+# print(stats_for_project(221, 'MATH', 3,0,0,1,0,1,1))

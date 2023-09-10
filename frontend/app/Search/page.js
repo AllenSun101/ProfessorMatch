@@ -4,21 +4,79 @@ import axios from 'axios';
 
 async function fetchData(props){
     console.log(props);
-    const data = await axios.get(`http://127.0.0.1:5000/Temporary_Fetch/${props.course}/${props.feedback}/${props.learn}/${props.expectations}/${props.critical}/${props.diverse}/${props.clear}/${props.grade}`);
-    
-    console.log(data);
+    var data = await axios.get(`http://127.0.0.1:5000/Temporary_Fetch/${props.course}/${props.feedback}/${props.learn}/${props.expectations}/${props.critical}/${props.diverse}/${props.clear}/${props.grade}`);
+
+    return data.data;
+}
+
+async function MapRatings(props){
+  console.log(props);
+  if(props.ratings == undefined){
+    return(
+      <>
+      </>
+    )
+  }
+
+  return (
+    <div>
+        <div className="w-full xl:w-8/12 mb-12 xl:mb-0 px-4 mx-auto mt-24">
+          <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded ">
+            <h1>{props.course}</h1>
+
+            <div className="block w-full overflow-x-auto">
+              <table className="items-center bg-transparent w-full border-collapse ">
+                <thead>
+                  <tr>
+                    <th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 border-t-0 whitespace-nowrap font-semibold text-left">
+                      Rank
+                    </th>
+                    <th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 border-t-0 whitespace-nowrap font-semibold text-left">
+                      Professor Name
+                    </th>
+                    <th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 border-t-0 whitespace-nowrap font-semibold text-left">
+                      Rating
+                    </th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                {Object.entries(props.ratings).map(([professor, rating], index) => (
+                  <tr key={index}>
+                    <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700">
+                      {index + 1}
+                    </th>
+                    <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                      {professor}
+                    </td>
+                    <td className="border-t-0 px-6 align-center border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                      {rating}
+                    </td>
+                  </tr>
+                ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+  )
 }
   
 
 export default async function Search(props){
 
+    console.log(props);
+
     var results = props.searchParams;
     console.log(results);
 
-  var professorRatings;
-  if(results.course != undefined && results.course != ''){
-    professorRatings = fetchData(results);
-  }
+    var professorRatings;
+    if(results.course != undefined && results.course != ''){
+      professorRatings = await fetchData(results);
+    }
+
+    console.log(professorRatings);
   
   return (
     <main className='bg-white'>
@@ -172,95 +230,8 @@ export default async function Search(props){
           </form>
         </div>
       </div>
-
-      <div>
-        <p>map professor ratings if not undefined</p>
-      </div>
-
-      <section className="py-1 bg-blueGray-50">
-        <div className="w-full xl:w-8/12 mb-12 xl:mb-0 px-4 mx-auto mt-24">
-          <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded ">
-
-
-            <div className="block w-full overflow-x-auto">
-              <table className="items-center bg-transparent w-full border-collapse ">
-                <thead>
-                  <tr>
-                    <th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 border-t-0 whitespace-nowrap font-semibold text-left">
-                      Rank
-                    </th>
-                    <th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 border-t-0 whitespace-nowrap font-semibold text-left">
-                      Professor Name
-                    </th>
-                    <th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 border-t-0 whitespace-nowrap font-semibold text-left">
-                      Rating
-                    </th>
-                  </tr>
-                </thead>
-
-                <tbody>
-                  <tr>
-                    <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700 ">
-                      1
-                    </th>
-                    <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
-                      Name
-                    </td>
-                    <td className="border-t-0 px-6 align-center border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                      3.4
-                    </td>
-                  </tr>
-                  <tr>
-                    <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700">
-                      2
-                    </th>
-                    <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                      Name
-                    </td>
-                    <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                      3.4
-                    </td>
-                  </tr>
-                  <tr>
-                    <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700">
-                      3
-                    </th>
-                    <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                      Name
-                    </td>
-                    <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                      3.4
-                    </td>
-                  </tr>
-                  <tr>
-                    <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700">
-                      4
-                    </th>
-                    <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                      Name
-                    </td>
-                    <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                      3.4
-                    </td>
-                  </tr>
-                  <tr>
-                    <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700">
-                      5
-                    </th>
-                    <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                      Name
-                    </td>
-                    <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                      3.4
-                    </td>
-                  </tr>
-                </tbody>
-
-              </table>
-            </div>
-          </div>
-        </div>
-      </section>
+      <MapRatings ratings={professorRatings} course={results.course}/>
+      
     </main>
   )
 }
