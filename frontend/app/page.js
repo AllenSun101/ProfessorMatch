@@ -1,6 +1,11 @@
 import Image from 'next/image'
 
-export default function Home() {
+export default function Home(props) {
+  console.log(props);
+
+  var results = props.searchParams;
+  console.log(results);
+  
   return (
     <main className='bg-white'>
 
@@ -8,7 +13,7 @@ export default function Home() {
 
         <div class="mx-auto w-full max-w-[550px]">
 
-          <form action="" method="POST">
+          <form>
 
             <div class="mb-12">
               <label
@@ -19,8 +24,8 @@ export default function Home() {
               </label>
               <input
                 type="text"
-                name="guest"
-                id="guest"
+                name="course"
+                id="course"
                 placeholder="ENGR 102"
                 min="0"
                 class="w-full appearance-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#500000] focus:shadow-md"
@@ -42,7 +47,7 @@ export default function Home() {
                   <li class="flex justify-center text-sm"><span class="absolute">important</span></li>
                   <li class="flex justify-center text-sm"><span class="absolute">very important</span></li>
                 </ul>
-                <input type="range" class="w-full" min="0" max="3" step="1" />
+                <input type="range" name="feedback" class="w-full" min="0" max="3" step="1" />
               </div>
             </div>
 
@@ -59,7 +64,7 @@ export default function Home() {
                   <li class="flex justify-center text-sm"><span class="absolute">important</span></li>
                   <li class="flex justify-center text-sm"><span class="absolute">very important</span></li>
                 </ul>
-                <input type="range" class="w-full" min="0" max="3" step="1" />
+                <input type="range" name="learn" class="w-full" min="0" max="3" step="1" />
               </div>
             </div>
 
@@ -76,7 +81,7 @@ export default function Home() {
                   <li class="flex justify-center text-sm"><span class="absolute">important</span></li>
                   <li class="flex justify-center text-sm"><span class="absolute">very important</span></li>
                 </ul>
-                <input type="range" class="w-full" min="0" max="3" step="1" />
+                <input type="range" name="expectations" class="w-full" min="0" max="3" step="1" />
               </div>
             </div>
 
@@ -93,7 +98,7 @@ export default function Home() {
                   <li class="flex justify-center text-sm"><span class="absolute">important</span></li>
                   <li class="flex justify-center text-sm"><span class="absolute">very important</span></li>
                 </ul>
-                <input type="range" class="w-full" min="0" max="3" step="1" />
+                <input type="range" name="critical" class="w-full" min="0" max="3" step="1" />
               </div>
             </div>
 
@@ -110,7 +115,7 @@ export default function Home() {
                   <li class="flex justify-center text-sm"><span class="absolute">important</span></li>
                   <li class="flex justify-center text-sm"><span class="absolute">very important</span></li>
                 </ul>
-                <input type="range" class="w-full" min="0" max="3" step="1" />
+                <input type="range" name="diverse" class="w-full" min="0" max="3" step="1" />
               </div>
             </div>
 
@@ -127,7 +132,7 @@ export default function Home() {
                   <li class="flex justify-center text-sm"><span class="absolute">important</span></li>
                   <li class="flex justify-center text-sm"><span class="absolute">very important</span></li>
                 </ul>
-                <input type="range" class="w-full" min="0" max="3" step="1" />
+                <input type="range" name="organize" class="w-full" min="0" max="3" step="1" />
               </div>
             </div>
 
@@ -144,19 +149,12 @@ export default function Home() {
                   <li class="flex justify-center text-sm"><span class="absolute">important</span></li>
                   <li class="flex justify-center text-sm"><span class="absolute">very important</span></li>
                 </ul>
-                <input type="range" class="w-full" min="0" max="3" step="1" />
+                <input type="range" name="grade" class="w-full" min="0" max="3" step="1" />
               </div>
             </div>
 
-
-
             <div>
-              <button
-                className="hover:shadow-form rounded-md bg-[#500000] py-3 px-8 text-center text-base font-semibold text-white outline-none mx-auto"
-
-              >
-                Submit
-              </button>
+                <input type="submit" value="Submit" className="hover:shadow-form rounded-md bg-[#500000] py-3 px-8 text-center text-base font-semibold text-white outline-none mx-auto" />
             </div>
           </form>
         </div>
