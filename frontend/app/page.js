@@ -1,13 +1,24 @@
 import Image from 'next/image'
+import axios from 'axios';
 
-export default function Home(props) {
-  console.log(props);
+async function fetchData(){
+  const data = axios.get('http://localhost:3001/Fetch_Data');
+  
+  console.log(data);
+}
+
+export default async function Home(props) {
 
   var results = props.searchParams;
   console.log(results);
+
+  var professorRatings;
+  if(Object.keys(results).length == 8){
+    professorRatings = fetchData();
+  }
   
   return (
-    <main classNameName='bg-white'>
+    <main className='bg-white'>
 
       <div className="flex flex-col items-center justify-center p-12">
 
@@ -17,7 +28,6 @@ export default function Home(props) {
 
             <div className="mb-12">
               <label
-                for="guest"
                 className="mb-3 block text-base font-medium text-[#07074D]"
               >
                 Enter the course name
@@ -47,7 +57,7 @@ export default function Home(props) {
                   <li className="flex justify-center text-sm"><span className="absolute">important</span></li>
                   <li className="flex justify-center text-sm"><span className="absolute">very important</span></li>
                 </ul>
-                <input type="range" className="w-full" min="0" max="3" step="1" />
+                <input type="range" name="feedback" className="w-full" min="0" max="3" step="1" />
               </div>
             </div>
 
@@ -64,7 +74,7 @@ export default function Home(props) {
                   <li className="flex justify-center text-sm"><span className="absolute">important</span></li>
                   <li className="flex justify-center text-sm"><span className="absolute">very important</span></li>
                 </ul>
-                <input type="range" className="w-full" min="0" max="3" step="1" />
+                <input type="range" name="learn" className="w-full" min="0" max="3" step="1" />
               </div>
             </div>
 
@@ -81,7 +91,7 @@ export default function Home(props) {
                   <li className="flex justify-center text-sm"><span className="absolute">important</span></li>
                   <li className="flex justify-center text-sm"><span className="absolute">very important</span></li>
                 </ul>
-                <input type="range" className="w-full" min="0" max="3" step="1" />
+                <input type="range" name="expectations" className="w-full" min="0" max="3" step="1" />
               </div>
             </div>
 
@@ -98,7 +108,7 @@ export default function Home(props) {
                   <li className="flex justify-center text-sm"><span className="absolute">important</span></li>
                   <li className="flex justify-center text-sm"><span className="absolute">very important</span></li>
                 </ul>
-                <input type="range" className="w-full" min="0" max="3" step="1" />
+                <input type="range" name="critical" className="w-full" min="0" max="3" step="1" />
               </div>
             </div>
 
@@ -115,7 +125,7 @@ export default function Home(props) {
                   <li className="flex justify-center text-sm"><span className="absolute">important</span></li>
                   <li className="flex justify-center text-sm"><span className="absolute">very important</span></li>
                 </ul>
-                <input type="range" className="w-full" min="0" max="3" step="1" />
+                <input type="range" name="diverse" className="w-full" min="0" max="3" step="1" />
               </div>
             </div>
 
@@ -132,7 +142,7 @@ export default function Home(props) {
                   <li className="flex justify-center text-sm"><span className="absolute">important</span></li>
                   <li className="flex justify-center text-sm"><span className="absolute">very important</span></li>
                 </ul>
-                <input type="range" className="w-full" min="0" max="3" step="1" />
+                <input type="range" name="clear" class="w-full" min="0" max="3" step="1" />
               </div>
             </div>
 
@@ -149,20 +159,19 @@ export default function Home(props) {
                   <li className="flex justify-center text-sm"><span className="absolute">important</span></li>
                   <li className="flex justify-center text-sm"><span className="absolute">very important</span></li>
                 </ul>
-                <input type="range" className="w-full" min="0" max="3" step="1" />
+                <input type="range" name="grade" className="w-full" min="0" max="3" step="1" />
               </div>
             </div>
 
             <div>
-              <button
-                classNameName="hover:shadow-form rounded-md bg-[#500000] py-3 px-8 text-center text-base font-semibold text-white outline-none mx-auto"
-
-              >
-                Submit
-              </button>
+              <input type="submit" value="Submit" className="hover:shadow-form rounded-md bg-[#500000] py-3 px-8 text-center text-base font-semibold text-white outline-none mx-auto" />
             </div>
           </form>
         </div>
+      </div>
+
+      <div>
+        <p>map professor ratings if not undefined</p>
       </div>
 
       <section className="py-1 bg-blueGray-50">
