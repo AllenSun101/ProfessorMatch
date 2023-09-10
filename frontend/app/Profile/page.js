@@ -2,12 +2,12 @@ import Slider from "./slider";
 import axios from "axios";
 
 // get sqlite stuff
-async function fetchPreferences(){
+async function fetchPreferences() {
     const user = "test"
     //const data = axios.get()
 }
 
-export default async function Profile(){
+export default async function Profile() {
 
     const data = await fetchPreferences();
 
@@ -21,7 +21,7 @@ export default async function Profile(){
     var courseOrganization = "N/A";
     var gradeDistribution = "N/A";
 
-    return(
+    return (
         <div>
             <p>profile stuff</p>
             <p>sliders</p>

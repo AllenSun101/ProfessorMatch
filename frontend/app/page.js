@@ -18,21 +18,26 @@ export default function Home() {
             Join our community today! Create an account or sign in to explore
             our website.
           </p>
-          <button className="bg-aggie hover:bg-[#381717] text-white  btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">Responsive</button>
           <div className="mt-12 mb-8">
-            <Link href="/SignUp" className="bg-aggie hover:bg-[#381717] text-white font-semibold px-6 py-6 rounded-xl mr-4 text-xl mr-9">
+            {/* <Link href="/SignUp" className="bg-aggie hover:bg-[#381717] text-white font-semibold px-6 py-6 rounded-xl mr-4 text-xl mr-9">
               Create Account
 
             </Link>
             <Link href="/SignIn" className="bg-gray-500 hover:bg-gray-600 text-white font-semibold px-6 py-6 rounded-xl text-xl">
               Sign In
 
+            </Link> */}
+            <Link href="/SignUp">
+              <button className="bg-aggie hover:bg-[#381717] outline-none text-white  btn btn-xs sm:btn-sm md:btn-md lg:btn-lg mr-9">Create Account</button>
+            </Link>
+            <Link href="/SignIn">
+              <button className="bg-gray-500 hover:bg-gray-600 outline-none text-white  btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">Sign In</button>
             </Link>
           </div>
         </section>
 
         <section className="bg-white rounded-lg shadow-lg p-8 mb-8 space-y-6">
-      <h2 className="text-3xl font-semibold mb-4">About Us</h2>
+          <h2 className="text-3xl font-semibold mb-4">About Us</h2>
 
       <div className="text-gray-900 text-lg leading-loose">
         <h3 className="text-2xl font-semibold mb-2">Introduction</h3>
