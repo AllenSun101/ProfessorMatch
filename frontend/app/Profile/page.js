@@ -23,7 +23,7 @@ export default async function Profile(){
 
     return(
         <div>
-            <p>profile shit</p>
+            <p>profile stuff</p>
             <p>sliders</p>
             <Slider />
         </div>

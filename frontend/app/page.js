@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div className="bg-gray-100 min-h-screen">
       <header className="bg-white-500 text-gray-700 pt-14 pb-4 text-center">
-        <h1 className="text-4xl font-extrabold">Welcome to Prof Rate</h1>
+        <h1 className="text-4xl font-extrabold">Welcome to ProfMatch</h1>
         <p className="text-lg">A dynamic, personalized professor matching system.</p>
       </header>
 
@@ -37,7 +37,7 @@ export default function Home() {
       <div className="text-gray-900 text-lg leading-loose">
         <h3 className="text-2xl font-semibold mb-2">Introduction</h3>
         <p>
-          Welcome to <span className="text-aggie">Prof Rate</span>, your go-to destination for candid and insightful reviews of professors of Texas A&M. Founded by a group of passionate students, our platform is dedicated to revolutionizing the way students choose their courses and professors. We believe that education is a collaborative effort, and students deserve a platform to report their experiences, helping others make informed decisions about their academic journey. 
+          Welcome to <span className="text-aggie">ProfMatch</span>, your go-to destination for candid and insightful reviews of professors of Texas A&M. Founded by a group of passionate students, our platform is dedicated to revolutionizing the way students choose their courses and professors. We believe that education is a collaborative effort, and students deserve a platform to report their experiences, helping others make informed decisions about their academic journey. 
         </p>
 
         <h3 className="text-2xl font-semibold mt-6 mb-2">What Sets Us Apart?</h3>
@@ -58,10 +58,10 @@ export default function Home() {
 
         <h3 className="text-2xl font-semibold mt-6 mb-2">Our Mission</h3>
         <p>
-          At <span className="text-aggie">Prof Rate</span>, our mission is to empower students to take control of their education. We believe that accurate data from students about professors and courses can lead to better academic choices and improved learning experiences.
+          At <span className="text-aggie">ProfMatch</span>, our mission is to empower students to take control of their education. We believe that accurate data from students about professors and courses can lead to better academic choices and improved learning experiences.
         </p>
         <p>
-          We're dedicated to providing you with the most valuable insights and helping you make the best decisions for your academic journey. Join us today and be part of the <span className="text-aggie">Prof Rate</span> community.
+          We're dedicated to providing you with the most valuable insights and helping you make the best decisions for your academic journey. Join us today and be part of the <span className="text-aggie">ProfMatch</span> community.
         </p>
       </div>
     </section>

@@ -95,7 +95,7 @@ export default async function Search(props) {
 
             <div className="mb-12">
               <label
-                className="mb-3 block text-base font-medium text-[#07074D]"
+                className="mb-3 block text-base font-medium text-3xl text-[#07074D]"
               >
                 Enter the course name
               </label>
@@ -109,7 +109,7 @@ export default async function Search(props) {
               />
             </div>
 
-            <h2 className="text-2xl tracking-tight mb-12 text-center">How important is it that the professor:</h2>
+            <h2 className="text-3xl tracking-tight mb-12 text-center">How important is it that the professor:</h2>
 
             <div className="mb-5">
               <label
@@ -125,24 +125,10 @@ export default async function Search(props) {
                   <li className="flex justify-center text-sm"><span className="absolute">Important</span></li>
                   <li className="flex justify-center text-sm"><span className="absolute">Very Important</span></li>
                 </ul>
-                <input type="range" min={0} max="100" value="25" className="range" step="25" />
-                <div className="w-full flex justify-between text-xs px-2">
-                  <span>Not Important</span>
-                  <span>Somewhat Important</span>
-                  <span>Important</span>
-                  <span>Very Important</span>
-                </div>
+                <input type="range" name="feedback" className="w-full" min="0" max="3" step="1" />
               </div>
 
 
-              <input type="range" min={0} max="100" value="25" className="range" step="25" />
-              <div className="w-full flex justify-between text-xs px-2">
-                <span>|</span>
-                <span>|</span>
-                <span>|</span>
-                <span>|</span>
-                <span>|</span>
-              </div>
 
             </div>
 
