@@ -2,8 +2,8 @@ export default function SignIn() {
   return (
     <main className="bg-white pb-24">
 
-      <div class="sm:mx-auto sm:w-full sm:max-w-sm">
-        <h2 class="py-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign Into Your Account</h2>
+      <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+        <h2 className="py-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign Into Your Account</h2>
       </div>
       <div className="flex items-center justify-center p-12">
 
@@ -48,7 +48,7 @@ export default function SignIn() {
               </div>
               <p class="mt-10 text-center text-sm text-gray-500 pb-24">
                 Not a member?
-                <a href="#" class="font-semibold leading-6 text-black-600 hover:text-black-500"> Sign Up</a>
+                <a href="/SignUp" class="font-semibold leading-6 text-black-600 hover:text-black-500"> Sign Up</a>
               </p>
             </div>
           </form>
