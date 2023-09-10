@@ -14,10 +14,10 @@ export default function NavBar() {
         </div>
         <div className="flex-grow"></div>
         <div className="font-bold text-white">
-            <Link href="/search" className="cursor-pointer text-lg">Search</Link>
+            <Link href="/Search" className="cursor-pointer text-lg">Search</Link>
         </div>
         <div className="font-bold text-white">
-            <Link href="/signin" className="cursor-pointer text-lg ml-14">Login</Link>
+            <Link href="/SignIn" className="cursor-pointer text-lg ml-14">Login</Link>
         </div>
         </nav>
     )
