@@ -13,6 +13,9 @@ export default function NavBar() {
                 />
             </div>
             <div className="flex items-center space-x-8 font-bold text-white">
+                <span className="cursor-pointer text-lg">Search</span>
+            </div>
+            <div className="flex items-center space-x-8 font-bold text-white">
                 <span className="cursor-pointer text-lg">Login</span>
             </div>
         </nav>
