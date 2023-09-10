@@ -1,4 +1,3 @@
-import Footer from "./footer"
 export default function SignIn() {
   return (
     <main className="bg-white pb-24">
@@ -53,7 +52,6 @@ export default function SignIn() {
           </form>
         </div>
       </div>
-      <Footer />
     </main>
   )
 }
