@@ -3,8 +3,8 @@ import Link from "next/link"
 export default function Home() {
   return (
     <div className="bg-gray-100 min-h-screen">
-      <header className="bg-white-500 text-gray-700 py-8 text-center">
-        <h1 className="text-4xl font-extrabold">Welcome to ___________________</h1>
+      <header className="bg-white-500 text-gray-700 pt-14 pb-4 text-center">
+        <h1 className="text-4xl font-extrabold">Welcome to Prof Rate</h1>
         <p className="text-lg">Your go-to source for amazing content and services</p>
       </header>
 
@@ -19,11 +19,11 @@ export default function Home() {
             our website.
           </p>
           <div className="mt-8 mb-8">
-            <Link href="/signup" className="bg-aggie hover:bg-[#381717] text-white font-semibold px-6 py-6 rounded-xl mr-4 text-xl">
+            <Link href="/SignUp" className="bg-aggie hover:bg-[#381717] text-white font-semibold px-6 py-6 rounded-xl mr-4 text-xl">
               Create Account
 
             </Link>
-            <Link href="/signin" className="bg-gray-500 hover:bg-gray-600 text-white font-semibold px-6 py-6 rounded-xl text-xl">
+            <Link href="/SignIn" className="bg-gray-500 hover:bg-gray-600 text-white font-semibold px-6 py-6 rounded-xl text-xl">
               Sign In
 
             </Link>

@@ -22,19 +22,19 @@ async function MapRatings(props){
     <div>
         <div className="w-full xl:w-8/12 mb-12 xl:mb-0 px-4 mx-auto mt-24">
           <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded ">
-            <h1>{props.course}</h1>
+            <h1 className="text-3xl tracking-tight mb-12 text-center">Professor matches for {props.course}</h1>
 
             <div className="block w-full overflow-x-auto">
               <table className="items-center bg-transparent w-full border-collapse ">
                 <thead>
                   <tr>
-                    <th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 border-t-0 whitespace-nowrap font-semibold text-left">
+                    <th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-md uppercase border-l-0 border-r-0 border-t-0 whitespace-nowrap font-semibold">
                       Rank
                     </th>
-                    <th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 border-t-0 whitespace-nowrap font-semibold text-left">
+                    <th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-md uppercase border-l-0 border-r-0 border-t-0 whitespace-nowrap font-semibold">
                       Professor Name
                     </th>
-                    <th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 border-t-0 whitespace-nowrap font-semibold text-left">
+                    <th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-md uppercase border-l-0 border-r-0 border-t-0 whitespace-nowrap font-semibold">
                       Rating
                     </th>
                   </tr>
@@ -43,13 +43,13 @@ async function MapRatings(props){
                 <tbody>
                 {Object.entries(props.ratings).map(([professor, rating], index) => (
                   <tr key={index}>
-                    <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700">
+                    <th className="border-t-0 px-6 align-center border-l-0 border-r-0 text-md whitespace-nowrap p-4 text-blueGray-700">
                       {index + 1}
                     </th>
-                    <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                    <td className="border-t-0 px-6 align-center border-l-0 border-r-0 text-md whitespace-nowrap p-4">
                       {professor}
                     </td>
-                    <td className="border-t-0 px-6 align-center border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                    <td className="border-t-0 px-6 align-center border-l-0 border-r-0 text-md whitespace-nowrap p-4">
                       {rating}
                     </td>
                   </tr>
