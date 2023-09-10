@@ -18,9 +18,18 @@ def stats_for_project(course, subject_code, grade_importance,expected_importance
 
     df = df[df["course_number"] == int(course)]
     df = df[df["subject_code"] == subject_code]
+
+    if df.empty:
+        return df
+    
     df['final_scoring'] = df.apply(lambda row: round((row['GPA'] * int(grade_importance) + row['expected'] * int(expected_importance) + row['objectives'] * int(objective_importance) + row['criticalthinking'] * int(critical_importance) + row['organizerranking'] * int(organization_importance) + row['diverse'] * int(diverse_importance) + row['feedback'] * int(feedback_importance)), 2), axis=1)
     max_score = int(grade_importance) + int(expected_importance) + int(objective_importance) + int(critical_importance) + int(organization_importance) + int(feedback_importance) + int(diverse_importance)
-    df['final_scoring_normal'] = df.apply(lambda row: round(5 * row['final_scoring'] / max_score, 2), axis=1)
+    
+    if max_score == 0:
+        df['final_scoring_normal'] = df.apply(lambda row: 0.00, axis=1)
+    else:
+        df['final_scoring_normal'] = df.apply(lambda row: round(5 * row['final_scoring'] / max_score, 2), axis=1)
+
     final_df=df.loc[:,["professor_name","final_scoring_normal"]]
     final_df = final_df.groupby(['professor_name']).mean()
     final_df = final_df.sort_values(by='final_scoring_normal', ascending=False)
