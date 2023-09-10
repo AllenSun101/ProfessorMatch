@@ -12,11 +12,12 @@ export default function NavBar() {
             height={300}
             />
         </div>
-        <div className="flex items-center space-x-8 font-bold text-white">
-            <Link href="/Search" className="cursor-pointer text-lg">Search</Link>
+        <div className="flex-grow"></div>
+        <div className="font-bold text-white">
+            <Link href="/search" className="cursor-pointer text-lg">Search</Link>
         </div>
-        <div className="flex items-center space-x-8 font-bold text-white">
-            <Link href="/SignIn" className="cursor-pointer text-lg">Login</Link> 
+        <div className="font-bold text-white">
+            <Link href="/signin" className="cursor-pointer text-lg ml-14">Login</Link>
         </div>
         </nav>
     )
