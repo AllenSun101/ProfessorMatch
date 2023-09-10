@@ -20,9 +20,9 @@ async function MapRatings(props){
 
   return (
     <div>
-        <div className="w-full xl:w-8/12 mb-12 xl:mb-0 px-4 mx-auto mt-24">
+        <div className="w-full xl:w-8/12 mb-12 px-4 mx-auto mt-24 mb-24">
           <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded ">
-            <h1 className="text-3xl tracking-tight mb-12 text-center">Personalized Professor matches for {props.course}</h1>
+            <h1 className="text-3xl tracking-tight mb-12 text-center">Personalized Professor Matches for {props.course}</h1>
 
             <div className="block w-full overflow-x-auto">
             <table className="items-center bg-transparent w-full border-collapse">

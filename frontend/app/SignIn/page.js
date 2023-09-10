@@ -1,3 +1,4 @@
+
 export default function SignIn() {
   return (
     <main className="bg-white pb-24">
@@ -8,7 +9,7 @@ export default function SignIn() {
       <div className="flex items-center justify-center p-12">
 
         <div className="mx-auto w-full max-w-[550px]">
-          <form action="" method="POST">
+          <form>
 
             <div className="mb-5">
               <label
@@ -41,7 +42,7 @@ export default function SignIn() {
             </div>
 
             <div className="pb-4">
-              <button type="submit" className="flex w-full justify-center rounded-md bg-aggie px-8 py-3 text-mm font-semibold leading-6 text-white shadow-sm hover:bg-aggie focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bg-aggie">Sign In</button>
+              <button type="submit" href='/Search' className="flex w-full justify-center rounded-md bg-aggie px-8 py-3 text-mm font-semibold leading-6 text-white shadow-sm hover:bg-aggie focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bg-aggie">Sign In</button>
               <div>
               </div>
               <p className="mt-10 text-center text-sm text-gray-500 pb-24">
