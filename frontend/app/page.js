@@ -18,6 +18,7 @@ export default function Home() {
             Join our community today! Create an account or sign in to explore
             our website.
           </p>
+          <button className="bg-aggie hover:bg-[#381717] text-white  btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">Responsive</button>
           <div className="mt-12 mb-8">
             <Link href="/SignUp" className="bg-aggie hover:bg-[#381717] text-white font-semibold px-6 py-6 rounded-xl mr-4 text-xl mr-9">
               Create Account

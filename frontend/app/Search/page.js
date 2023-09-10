@@ -2,17 +2,17 @@ import Image from 'next/image'
 import axios from 'axios';
 
 
-async function fetchData(props){
-    console.log(props);
-    var data = await axios.get(`http://127.0.0.1:5000/Temporary_Fetch/${props.course}/${props.feedback}/${props.learn}/${props.expectations}/${props.critical}/${props.diverse}/${props.clear}/${props.grade}`);
+async function fetchData(props) {
+  console.log(props);
+  var data = await axios.get(`http://127.0.0.1:5000/Temporary_Fetch/${props.course}/${props.feedback}/${props.learn}/${props.expectations}/${props.critical}/${props.diverse}/${props.clear}/${props.grade}`);
 
-    return data.data;
+  return data.data;
 }
 
-async function MapRatings(props){
+async function MapRatings(props) {
   console.log(props);
-  if(props.ratings == undefined){
-    return(
+  if (props.ratings == undefined) {
+    return (
       <>
       </>
     )
@@ -20,11 +20,11 @@ async function MapRatings(props){
 
   return (
     <div>
-        <div className="w-full xl:w-8/12 mb-12 px-4 mx-auto mt-24 mb-24">
-          <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded ">
-            <h1 className="text-3xl tracking-tight mb-12 text-center">Personalized Professor Matches for {props.course}</h1>
+      <div className="w-full xl:w-8/12 mb-12 px-4 mx-auto mt-24 mb-24">
+        <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded ">
+          <h1 className="text-3xl tracking-tight mb-12 text-center">Personalized Professor Matches for {props.course}</h1>
 
-            <div className="block w-full overflow-x-auto">
+          <div className="block w-full overflow-x-auto">
             <table className="items-center bg-transparent w-full border-collapse">
               <thead>
                 <tr>
@@ -49,42 +49,41 @@ async function MapRatings(props){
                     <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-md whitespace-nowrap p-4 text-center">
                       {professor}
                     </td>
-                    <td className={`border-t-0 px-6 align-middle border-l-0 border-r-0 text-md whitespace-nowrap p-4 text-center ${
-                      rating >= 4
-                        ? 'text-green-500'
-                        : rating >= 3
+                    <td className={`border-t-0 px-6 align-middle border-l-0 border-r-0 text-md whitespace-nowrap p-4 text-center ${rating >= 4
+                      ? 'text-green-500'
+                      : rating >= 3
                         ? 'text-yellow-500'
                         : 'text-red-500'
-                    }`}>
-                    {rating}
+                      }`}>
+                      {rating}
                     </td>
                   </tr>
                 ))}
               </tbody>
             </table>
 
-            </div>
           </div>
         </div>
       </div>
+    </div>
   )
 }
-  
 
-export default async function Search(props){
 
-    console.log(props);
+export default async function Search(props) {
 
-    var results = props.searchParams;
-    console.log(results);
+  console.log(props);
 
-    var professorRatings;
-    if(results.course != undefined && results.course != ''){
-      professorRatings = await fetchData(results);
-    }
+  var results = props.searchParams;
+  console.log(results);
 
-    console.log(professorRatings);
-  
+  var professorRatings;
+  if (results.course != undefined && results.course != '') {
+    professorRatings = await fetchData(results);
+  }
+
+  console.log(professorRatings);
+
   return (
     <main className='bg-white'>
 
@@ -118,6 +117,7 @@ export default async function Search(props){
               >
                 Gives quality feedback
               </label>
+
               <div className="flex flex-col space-y-2 p-2">
                 <ul className="flex justify-between w-full px-[10px] mb-6">
                   <li className="flex justify-center text-sm"><span className="absolute">Not Important</span></li>
@@ -125,8 +125,25 @@ export default async function Search(props){
                   <li className="flex justify-center text-sm"><span className="absolute">Important</span></li>
                   <li className="flex justify-center text-sm"><span className="absolute">Very Important</span></li>
                 </ul>
-                <input type="range" name="feedback" className="w-full" min="0" max="3" step="1" />
+                <input type="range" min={0} max="100" value="25" className="range" step="25" />
+                <div className="w-full flex justify-between text-xs px-2">
+                  <span>Not Important</span>
+                  <span>Somewhat Important</span>
+                  <span>Important</span>
+                  <span>Very Important</span>
+                </div>
               </div>
+
+
+              <input type="range" min={0} max="100" value="25" className="range" step="25" />
+              <div className="w-full flex justify-between text-xs px-2">
+                <span>|</span>
+                <span>|</span>
+                <span>|</span>
+                <span>|</span>
+                <span>|</span>
+              </div>
+
             </div>
 
             <div className="mb-5">
@@ -142,7 +159,7 @@ export default async function Search(props){
                   <li className="flex justify-center text-sm"><span className="absolute">Important</span></li>
                   <li className="flex justify-center text-sm"><span className="absolute">Very Important</span></li>
                 </ul>
-                <input type="range" name="learn" className="w-full" min="0" max="3" step="1"/>
+                <input type="range" name="learn" className="w-full" min="0" max="3" step="1" />
               </div>
             </div>
 
@@ -237,8 +254,8 @@ export default async function Search(props){
           </form>
         </div>
       </div>
-      <MapRatings ratings={professorRatings} course={results.course}/>
-      
+      <MapRatings ratings={professorRatings} course={results.course} />
+
     </main>
   )
 }
