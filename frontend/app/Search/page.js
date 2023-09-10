@@ -22,40 +22,47 @@ async function MapRatings(props){
     <div>
         <div className="w-full xl:w-8/12 mb-12 xl:mb-0 px-4 mx-auto mt-24">
           <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded ">
-            <h1 className="text-3xl tracking-tight mb-12 text-center">Professor matches for {props.course}</h1>
+            <h1 className="text-3xl tracking-tight mb-12 text-center">Personalized Professor matches for {props.course}</h1>
 
             <div className="block w-full overflow-x-auto">
-              <table className="items-center bg-transparent w-full border-collapse ">
-                <thead>
-                  <tr>
-                    <th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-md uppercase border-l-0 border-r-0 border-t-0 whitespace-nowrap font-semibold">
-                      Rank
-                    </th>
-                    <th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-md uppercase border-l-0 border-r-0 border-t-0 whitespace-nowrap font-semibold">
-                      Professor Name
-                    </th>
-                    <th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-md uppercase border-l-0 border-r-0 border-t-0 whitespace-nowrap font-semibold">
-                      Rating
-                    </th>
-                  </tr>
-                </thead>
+            <table className="items-center bg-transparent w-full border-collapse">
+              <thead>
+                <tr>
+                  <th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-md uppercase border-l-0 border-r-0 border-t-0 whitespace-nowrap font-semibold text-center">
+                    Rank
+                  </th>
+                  <th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-md uppercase border-l-0 border-r-0 border-t-0 whitespace-nowrap font-semibold text-center">
+                    Professor Name
+                  </th>
+                  <th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-md uppercase border-l-0 border-r-0 border-t-0 whitespace-nowrap font-semibold text-center">
+                    Rating
+                  </th>
+                </tr>
+              </thead>
 
-                <tbody>
+              <tbody>
                 {Object.entries(props.ratings).map(([professor, rating], index) => (
-                  <tr key={index}>
-                    <th className="border-t-0 px-6 align-center border-l-0 border-r-0 text-md whitespace-nowrap p-4 text-blueGray-700">
+                  <tr key={index} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-100'}>
+                    <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-md whitespace-nowrap p-4 text-blueGray-700 text-center">
                       {index + 1}
                     </th>
-                    <td className="border-t-0 px-6 align-center border-l-0 border-r-0 text-md whitespace-nowrap p-4">
+                    <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-md whitespace-nowrap p-4 text-center">
                       {professor}
                     </td>
-                    <td className="border-t-0 px-6 align-center border-l-0 border-r-0 text-md whitespace-nowrap p-4">
-                      {rating}
+                    <td className={`border-t-0 px-6 align-middle border-l-0 border-r-0 text-md whitespace-nowrap p-4 text-center ${
+                      rating >= 4
+                        ? 'text-green-500'
+                        : rating >= 3
+                        ? 'text-yellow-500'
+                        : 'text-red-500'
+                    }`}>
+                    {rating}
                     </td>
                   </tr>
                 ))}
-                </tbody>
-              </table>
+              </tbody>
+            </table>
+
             </div>
           </div>
         </div>
@@ -103,13 +110,13 @@ export default async function Search(props){
               />
             </div>
 
-            <h2 className="text-2xl tracking-tight mb-12 text-center">How important are each of the following:</h2>
+            <h2 className="text-2xl tracking-tight mb-12 text-center">How important is it that the professor:</h2>
 
             <div className="mb-5">
               <label
                 className="mb-3 block text-base font-medium text-[#07074D]"
               >
-                Professor gives quality feedback
+                Gives quality feedback
               </label>
               <div className="flex flex-col space-y-2 p-2">
                 <ul className="flex justify-between w-full px-[10px] mb-6">
@@ -126,7 +133,7 @@ export default async function Search(props){
               <label
                 className="mb-3 block text-base font-medium text-[#07074D]"
               >
-                Professor helps me learn concepts or skills
+                Helps me learn concepts or skills
               </label>
               <div className="flex flex-col space-y-2 p-2">
                 <ul className="flex justify-between w-full px-[10px] mb-6">
@@ -143,7 +150,7 @@ export default async function Search(props){
               <label
                 className="mb-3 block text-base font-medium text-[#07074D]"
               >
-                Professor has clear expectations
+                Has clear expectations
               </label>
               <div className="flex flex-col space-y-2 p-2">
                 <ul className="flex justify-between w-full px-[10px] mb-6">
@@ -160,7 +167,7 @@ export default async function Search(props){
               <label
                 className="mb-3 block text-base font-medium text-[#07074D]"
               >
-                Professor facilitates critical thinking
+                Facilitates critical thinking
               </label>
               <div className="flex flex-col space-y-2 p-2">
                 <ul className="flex justify-between w-full px-[10px] mb-6">
@@ -177,7 +184,7 @@ export default async function Search(props){
               <label
                 className="mb-3 block text-base font-medium text-[#07074D]"
               >
-                Professor promotes diverse ideas
+                Promotes diverse ideas
               </label>
               <div className="flex flex-col space-y-2 p-2">
                 <ul className="flex justify-between w-full px-[10px] mb-6">
@@ -194,7 +201,7 @@ export default async function Search(props){
               <label
                 className="mb-3 block text-base font-medium text-[#07074D]"
               >
-                Professor organizes course clearly
+                Organizes the course clearly
               </label>
               <div className="flex flex-col space-y-2 p-2">
                 <ul className="flex justify-between w-full px-[10px] mb-6">
@@ -211,7 +218,7 @@ export default async function Search(props){
               <label
                 className="mb-3 block text-base font-medium text-[#07074D]"
               >
-                Professor has a high grade distribution
+                Has a high grade distribution
               </label>
               <div className="flex flex-col space-y-2 p-2">
                 <ul className="flex justify-between w-full px-[10px] mb-6">

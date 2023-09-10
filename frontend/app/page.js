@@ -5,7 +5,7 @@ export default function Home() {
     <div className="bg-gray-100 min-h-screen">
       <header className="bg-white-500 text-gray-700 pt-14 pb-4 text-center">
         <h1 className="text-4xl font-extrabold">Welcome to Prof Rate</h1>
-        <p className="text-lg">Your go-to source for amazing content and services</p>
+        <p className="text-lg">A dynamic, personalized professor matching system.</p>
       </header>
 
       <main className="container mx-auto p-8">

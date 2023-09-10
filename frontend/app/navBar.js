@@ -16,8 +16,8 @@ export default function NavBar() {
         </div>
         <div className="flex-grow"></div>
             <div className="font-bold text-2xl text-white flex items-center">
-            <h1 className="text-center">Prof Rate</h1>
-        </div>
+                <Link href="/" className="cursor-pointer text-lg ml-14">Prof Rate</Link>
+            </div>
         <div className="flex-grow"></div>
         <div className="font-bold text-white">
             <Link href="/Search" className="cursor-pointer text-lg">Search</Link>
