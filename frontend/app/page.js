@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-export default function Home(props) {
+export default function Home() {
   return(
     <div className="bg-gray-100 min-h-screen">
     <header className="bg-white-500 text-white py-8 text-center">
