@@ -17,13 +17,15 @@ def stats_for_project(course, subject_code, grade_importance,expected_importance
     df = df.loc[:, keep_list]
     df = df[df["course_number"] == course]
     df = df[df["subject_code"] == subject_code]
-    df['final_scoring'] = df.apply(lambda row: round(5 * (row['GPA'] * grade_importance + row['expected'] * expected_importance + row['objectives'] * objective_importance + row['criticalthinking'] * critical_importance + row['organizerranking'] * organization_importance+ row['diverse'] * diverse_importance + row['feedback'] * feedback_importance) / 7.0, 2), axis=1)
-    print(df.head())
+    df['final_scoring'] = df.apply(lambda row: round((row['GPA'] * grade_importance + row['expected'] * expected_importance + row['objectives'] * objective_importance + row['criticalthinking'] * critical_importance + row['organizerranking'] * organization_importance+ row['diverse'] * diverse_importance + row['feedback'] * feedback_importance), 2), axis=1)
+    max_score = max(df['final_scoring'])
+    df['final_scoring_normal'] = df.apply(lambda row: round(5 * row['final_scoring'] / max_score, 2), axis=1)
     df = df.sort_values(by='final_scoring', ascending=False)
-    final_df=df.loc[:,["professor_name","final_scoring"]]
+    final_df=df.loc[:,["professor_name","final_scoring_normal"]]
     final_df = final_df.groupby(['professor_name']).mean()
-    print("Choose Professor: " + final_df.iloc[0].index, "with score:", final_df.iloc[0].final_scoring)
+    df['final_scoring_normal'] = [round(i, 2) for i in df['final_scoring_normal']]
+    print("Choose Professor: " + final_df.index[0], "with score:", final_df.iloc[0].final_scoring_normal)
     return(final_df.head(10))
 
 
-print(stats_for_project(221, 'MATH', 1,1,1,1,1,1,1))
+print(stats_for_project(221, 'MATH', 5,2,3,1,5,1,1))
