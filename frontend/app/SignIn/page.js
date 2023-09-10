@@ -12,7 +12,6 @@ export default function SignIn() {
 
             <div className="mb-5">
               <label
-                for="guest"
                 className="mb-3 block text-base font-medium text-[#07074D]"
               >
                 Username
@@ -28,7 +27,6 @@ export default function SignIn() {
 
             <div className="mb-5">
               <label
-                for="guest"
                 className="mb-3 block text-base font-medium text-[#07074D]"
               >
                 Password
@@ -43,12 +41,12 @@ export default function SignIn() {
             </div>
 
             <div className="pb-4">
-              <button type="submit" class="flex w-full justify-center rounded-md bg-aggie px-8 py-3 text-mm font-semibold leading-6 text-white shadow-sm hover:bg-aggie focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bg-aggie">Sign In</button>
+              <button type="submit" className="flex w-full justify-center rounded-md bg-aggie px-8 py-3 text-mm font-semibold leading-6 text-white shadow-sm hover:bg-aggie focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bg-aggie">Sign In</button>
               <div>
               </div>
-              <p class="mt-10 text-center text-sm text-gray-500 pb-24">
+              <p className="mt-10 text-center text-sm text-gray-500 pb-24">
                 Not a member?
-                <a href="/SignUp" class="font-semibold leading-6 text-black-600 hover:text-black-500"> Sign Up</a>
+                <a href="/SignUp" className="font-semibold leading-6 text-black-600 hover:text-black-500"> Sign Up</a>
               </p>
             </div>
           </form>

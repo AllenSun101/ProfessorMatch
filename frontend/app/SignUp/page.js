@@ -2,8 +2,8 @@ export default function SignIn() {
   return (
     <main className="bg-white pb-24">
 
-      <div class="sm:mx-auto sm:w-full sm:max-w-sm">
-        <h2 class="py-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Create an Account</h2>
+      <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+        <h2 className="py-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Create an Account</h2>
       </div>
       <div className="flex items-center justify-center p-12">
 
@@ -13,7 +13,6 @@ export default function SignIn() {
               <div className="w-full px-3 sm:w-1/2">
                 <div className="mb-5">
                   <label
-                    for="fName"
                     className="mb-3 block text-base font-medium text-[#07074D]"
                   >
                     First Name
@@ -30,7 +29,6 @@ export default function SignIn() {
               <div className="w-full px-3 sm:w-1/2">
                 <div className="mb-5">
                   <label
-                    for="lName"
                     className="mb-3 block text-base font-medium text-[#07074D]"
                   >
                     Last Name
@@ -47,7 +45,6 @@ export default function SignIn() {
             </div>
             <div className="mb-5">
               <label
-                for="guest"
                 className="mb-3 block text-base font-medium text-[#07074D]"
               >
                 Username
@@ -63,7 +60,6 @@ export default function SignIn() {
 
             <div className="mb-5">
               <label
-                for="guest"
                 className="mb-3 block text-base font-medium text-[#07074D]"
               >
                 Password
@@ -78,7 +74,7 @@ export default function SignIn() {
             </div>
 
             <div className="pb-24">
-              <button type="submit" class="flex w-full justify-center rounded-md bg-aggie px-8 py-3 text-mm font-semibold leading-6 text-white shadow-sm hover:bg-aggie focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bg-aggie">Sign Up</button>
+              <button type="submit" className="flex w-full justify-center rounded-md bg-aggie px-8 py-3 text-mm font-semibold leading-6 text-white shadow-sm hover:bg-aggie focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bg-aggie">Sign Up</button>
               <div>
               </div>
             </div>

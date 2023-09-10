@@ -1,19 +1,31 @@
 from flask import Flask
 import sqlite3
 import analysis
+import pandas as pd
 
 app = Flask(__name__)
 
-@app.route('/Temporary_Fetch')
-def temp_ratings(preferences):
-    print(preferences)
-    return analysis.whatever()
 
+@app.route('/Temporary_Fetch/<course>/<feedback>/<learn>/<expectations>/<critical>/<diverse>/<clear>/<grade>', methods=['GET'])
+def temp_ratings(course, feedback, learn, expectations, critical, diverse, clear, grade):
+    
+    course_info = course.split(" ")
+    subject_code = course_info[0]
+    course = course_info[1]
+    print(subject_code)
+    data = analysis.stats_for_project(course, subject_code, grade, expectations, learn, critical, clear, diverse, feedback)
+
+    print(data)
+    return "Hello"
+
+
+# Once preferences are stored in sql database 
 @app.route('/Fetch_Data')
 def get_ratings():
-    return analysis.whatever()
+    pass
 
 
+# Once login and sign up info are complete
 @app.route('/Input_Preferences')
 def input_references(preferences):
     conn = sqlite3.connect('user_preferences.db')

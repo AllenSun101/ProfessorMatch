@@ -13,10 +13,12 @@ def stats_for_project(course, subject_code, grade_importance,expected_importance
     df['feedback'] = df.apply(lambda row: (row['feedback_1'] * 1.0 + row['feedback_2'] * 2.0 + row['feedback_3'] * 3.0 + row['feedback_4'] * 4.0 + row['feedback_5'] * 5.0 + row['feedback_6'] * 6.0) / max(1, row['feedback_1']+row['feedback_2']+row['feedback_3']+row['feedback_4']+row['feedback_5']+row['feedback_6']) / 6.0, axis=1)
 
     keep_list = ['GPA', 'expected', 'objectives', 'criticalthinking', 'organizerranking', 'diverse', 'feedback', 'semester', 'year', 'subject_code', 'course_number', 'section_number', 'professor_name']
-    
+
     df = df.loc[:, keep_list]
+
     df = df[df["course_number"] == course]
     df = df[df["subject_code"] == subject_code]
+
     df['final_scoring'] = df.apply(lambda row: round(5 * (row['GPA'] * grade_importance + row['expected'] * expected_importance + row['objectives'] * objective_importance + row['criticalthinking'] * critical_importance + row['organizerranking'] * organization_importance+ row['diverse'] * diverse_importance + row['feedback'] * feedback_importance) / 7.0, 2), axis=1)
     print(df.head())
     df = df.sort_values(by='final_scoring', ascending=False)

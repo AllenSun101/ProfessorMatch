@@ -2,8 +2,9 @@ import Image from 'next/image'
 import axios from 'axios';
 
 
-async function fetchData(){
-    const data = axios.get('http://localhost:3001/Fetch_Data');
+async function fetchData(props){
+    console.log(props);
+    const data = await axios.get(`http://127.0.0.1:5000/Temporary_Fetch/${props.course}/${props.feedback}/${props.learn}/${props.expectations}/${props.critical}/${props.diverse}/${props.clear}/${props.grade}`);
     
     console.log(data);
 }
@@ -15,8 +16,8 @@ export default async function Search(props){
     console.log(results);
 
   var professorRatings;
-  if(Object.keys(results).length == 8){
-    professorRatings = fetchData();
+  if(results.course != undefined && results.course != ''){
+    professorRatings = fetchData(results);
   }
   
   return (
@@ -144,7 +145,7 @@ export default async function Search(props){
                   <li className="flex justify-center text-sm"><span className="absolute">important</span></li>
                   <li className="flex justify-center text-sm"><span className="absolute">very important</span></li>
                 </ul>
-                <input type="range" name="clear" class="w-full" min="0" max="3" step="1" />
+                <input type="range" name="clear" className="w-full" min="0" max="3" step="1" />
               </div>
             </div>
 
