@@ -1,6 +1,6 @@
 export default function SignIn() {
   return (
-    <main className="bg-white pb-24">
+    <main className="bg-gray-100 pb-24">
 
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
         <h2 className="py-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign Into Your Account</h2>
