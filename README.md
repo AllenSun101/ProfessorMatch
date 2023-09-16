@@ -2,13 +2,13 @@
 
 2023 Howdy Hack Project!
 
-##Our Mission:
+## Our Mission:
 At ProfMatch, our mission is to empower students to take control of their education. We believe that accurate data from students about professors and courses can lead to better academic choices and improved learning experiences.
 
 ## What is it?
 Our user-friendly interface allows you to search for course names and report to you the professors best suited to your preferences for that course. Whether you're selecting your classes for the upcoming semester or just curious about your current instructors, finding the right information is a breeze. Our platform thrives on the feedback of students like you. We use AEFIS course evaluation data from students, published in a public and frequently updated Kaggle dataset, to give more thorough and objective feedback. Get an inside look into teaching styles, course content, grading criteria, and overall classroom experiences.
 
-##Personalize ratings for each student based on preferences 
+## Personalize ratings for each student based on preferences 
 Users can dynamically change and get ratings specifically for them, versus one-size-fits-all ratings on other sites, based on subjective metrics (people more likely to use if they are extremely like or dislike a professor causing voluntary bias)
 
 ## How we built it
