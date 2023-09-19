@@ -73,16 +73,6 @@ export default function Home() {
         </section>
 
       </main>
-      <div class="bg-aggie text-cente lg:text-left">
-        <div class="p-4 text-center text-white">
-          © 2023 Copyright 
-          <a
-            class="text-neutral-100 dark:text-neutral-300"
-            href="/"
-          > ProfMatch</a
-          >
-        </div>
-      </div>
 
     </div>
 

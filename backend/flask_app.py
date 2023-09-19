@@ -27,5 +27,11 @@ def temp_ratings(course, feedback, learn, expectations, critical, diverse, clear
     return result_dict
 
 
+
+@app.route('/Visualizations_Fetch/<course>/<feedback>/<learn>/<expectations>/<critical>/<diverse>/<clear>/<grade>', methods=['GET'])
+def visualization_ratings():
+    return "LOL"
+
+
 if __name__ == '__main__':
    app.run(debug = True)

@@ -6,8 +6,7 @@ export default function Footer() {
                 <a
                     className="text-neutral-100 dark:text-neutral-300"
                     href="/"
-                > ProfMatch</a
-                >
+                > ProfMatch</a>
             </div>
         </div>
     )

@@ -12,6 +12,8 @@ def stats_for_project(course, subject_code, grade_importance,expected_importance
     df['diverse'] = df.apply(lambda row: (row['diverse_1'] * 1.0 + row['diverse_2'] * 2.0 + row['diverse_3'] * 3.0 + row['diverse_4'] * 4.0 + row['diverse_5'] * 5.0) / max(1, row['diverse_1']+row['diverse_2']+row['diverse_3']+row['diverse_4']+row['diverse_5'] + row['diverse_0']) / 5.0, axis=1)
     df['feedback'] = df.apply(lambda row: (row['feedback_1'] * 1.0 + row['feedback_2'] * 2.0 + row['feedback_3'] * 3.0 + row['feedback_4'] * 4.0 + row['feedback_5'] * 5.0 + row['feedback_6'] * 6.0) / max(1, row['feedback_1']+row['feedback_2']+row['feedback_3']+row['feedback_4']+row['feedback_5']+row['feedback_6']) / 6.0, axis=1)
 
+    print(df)
+
     keep_list = ['GPA', 'expected', 'objectives', 'criticalthinking', 'organizerranking', 'diverse', 'feedback', 'semester', 'year', 'subject_code', 'course_number', 'section_number', 'professor_name']
 
     df = df.loc[:, keep_list]
@@ -36,6 +38,10 @@ def stats_for_project(course, subject_code, grade_importance,expected_importance
     final_df['final_scoring_normal'] = [round(i, 2) for i in final_df['final_scoring_normal']]
     #print("Choose Professor: " + final_df.index[0], "with score:", final_df.iloc[0].final_scoring_normal)
     return(final_df)
+
+
+def visualization_stats():
+    pass
 
 
 # print(stats_for_project(221, 'MATH', 3,0,0,1,0,1,1))
