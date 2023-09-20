@@ -4,7 +4,7 @@ def stats_for_project(course, subject_code, grade_importance,expected_importance
     df = pd.read_csv('sections.csv')
 
     #Go through each column case by case
-    df['GPA'] = df.apply(lambda row: (row['a'] * 4.0 + row['b'] * 3.0 + row['c'] * 2.0 + row['d'] * 1.0 + row['f'] * 0.0) / row['total_graded_students'] / 4.0, axis=1)
+    df['GPA'] = df.apply(lambda row: (row['a'] * 4.0 + row['b'] * 3.0 + row['c'] * 2.0 + row['d'] * 1.0 + row['f'] * 0.0 + row['q'] * 0.0) / (row['total_graded_students'] + row['q']) / 4.0, axis=1)
     df['expected'] = df.apply(lambda row: (row['expected_1'] * 1.0 + row['expected_2'] * 2.0 + row['expected_3'] * 3.0) / max(1, row['expected_1']+row['expected_2']+row['expected_3']) / 3.0, axis=1)
     df['objectives'] = df.apply(lambda row: (row['objectives_1'] * 1.0 + row['objectives_2'] * 2.0 + row['objectives_3'] * 3.0 + row['objectives_4'] *4.0) / max(1, row['objectives_1']+row['objectives_2']+row['objectives_3']+row['objectives_4']) / 4.0, axis=1)
     df['criticalthinking'] = df.apply(lambda row: (row['critical_thinking_1'] * 1.0 + row['critical_thinking_2'] * 2.0 + row['critical_thinking_3'] * 3.0 + row['critical_thinking_4'] * 4.0) / max(1, row['critical_thinking_1']+row['critical_thinking_2']+row['critical_thinking_3']+row['critical_thinking_4']) / 4.0, axis=1)
