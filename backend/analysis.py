@@ -12,8 +12,6 @@ def stats_for_project(course, subject_code, grade_importance,expected_importance
     df['diverse'] = df.apply(lambda row: (row['diverse_1'] * 1.0 + row['diverse_2'] * 2.0 + row['diverse_3'] * 3.0 + row['diverse_4'] * 4.0 + row['diverse_5'] * 5.0) / max(1, row['diverse_1']+row['diverse_2']+row['diverse_3']+row['diverse_4']+row['diverse_5'] + row['diverse_0']) / 5.0, axis=1)
     df['feedback'] = df.apply(lambda row: (row['feedback_1'] * 1.0 + row['feedback_2'] * 2.0 + row['feedback_3'] * 3.0 + row['feedback_4'] * 4.0 + row['feedback_5'] * 5.0 + row['feedback_6'] * 6.0) / max(1, row['feedback_1']+row['feedback_2']+row['feedback_3']+row['feedback_4']+row['feedback_5']+row['feedback_6']) / 6.0, axis=1)
 
-    print(df)
-
     keep_list = ['GPA', 'expected', 'objectives', 'criticalthinking', 'organizerranking', 'diverse', 'feedback', 'semester', 'year', 'subject_code', 'course_number', 'section_number', 'professor_name']
 
     df = df.loc[:, keep_list]
@@ -23,14 +21,20 @@ def stats_for_project(course, subject_code, grade_importance,expected_importance
 
     if df.empty:
         return df
-    
+        
     df['final_scoring'] = df.apply(lambda row: round((row['GPA'] * int(grade_importance) + row['expected'] * int(expected_importance) + row['objectives'] * int(objective_importance) + row['criticalthinking'] * int(critical_importance) + row['organizerranking'] * int(organization_importance) + row['diverse'] * int(diverse_importance) + row['feedback'] * int(feedback_importance)), 2), axis=1)
-    max_score = int(grade_importance) + int(expected_importance) + int(objective_importance) + int(critical_importance) + int(organization_importance) + int(feedback_importance) + int(diverse_importance)
     
-    if max_score == 0:
-        df['final_scoring_normal'] = df.apply(lambda row: 0.00, axis=1)
-    else:
-        df['final_scoring_normal'] = df.apply(lambda row: round(5 * row['final_scoring'] / max_score, 2), axis=1)
+    df['max_score'] = df.apply(lambda row: sum([
+        int(grade_importance) if row['GPA'] != 0 else 0,
+        int(expected_importance) if row['expected'] != 0 else 0,
+        int(objective_importance) if row['objectives'] != 0 else 0,
+        int(critical_importance) if row['criticalthinking'] != 0 else 0,
+        int(organization_importance) if row['organizerranking'] != 0 else 0,
+        int(feedback_importance) if row['feedback'] != 0 else 0,
+        int(diverse_importance) if row['diverse'] != 0 else 0
+    ]), axis=1)
+
+    df['final_scoring_normal'] = df.apply(lambda row: round(5 * row['final_scoring'] / row['max_score'], 2) if row['max_score'] > 0 else 0.00, axis=1)
 
     final_df=df.loc[:,["professor_name","final_scoring_normal"]]
     final_df = final_df.groupby(['professor_name']).mean()
@@ -44,4 +48,4 @@ def visualization_stats():
     pass
 
 
-# print(stats_for_project(221, 'MATH', 3,0,0,1,0,1,1))
+# print(stats_for_project(304, 'MATH', 1,1,1,1,1,1,1))

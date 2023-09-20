@@ -46,6 +46,7 @@ export default function NavBar() {
                     <div className="btn btn-ghost normal-case text-3xl">ProfMatch</div>
                 </Link>
             </div>
+
             <div className="navbar-end">
 
                 <Link href="/Search">
@@ -53,9 +54,8 @@ export default function NavBar() {
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                     </button>
                 </Link>
-                <Link href="/Feedback">
-                    Contact
-                </Link>
+                <Link href="/Trends"> Trends </Link>
+                <Link href="/Feedback"> Contact </Link>
             </div>
         </div>
 
