@@ -2,7 +2,6 @@ import axios from 'axios';
 
 
 async function fetchData(props) {
-  console.log(props);
   var data = await axios.get(`http://127.0.0.1:5000/Visualizations_Fetch/${props.course}/${props.feedback}/${props.learn}/${props.expectations}/${props.critical}/${props.diverse}/${props.clear}/${props.grade}`);
 
   return data.data;
@@ -25,6 +24,7 @@ async function MapRatings(props) {
 
           <div className="block w-full overflow-x-auto">
                 {/*Graph instead of table, with widgets*/}
+                {props.ratings['Craig M. Spears']['FALL 2022']}
           </div>
         </div>
       </div>
@@ -35,10 +35,7 @@ async function MapRatings(props) {
 
 export default async function Trends(props) {
 
-  console.log(props);
-
   var results = props.searchParams;
-  console.log(results);
 
   var professorRatings;
   if (results.course != undefined && results.course != '') {
