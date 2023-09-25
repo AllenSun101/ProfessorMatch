@@ -44,6 +44,20 @@ export default function Feedback() {
               </div>
             </div>
             <div className="mb-5">
+                  <label
+                    className="mb-3 block text-base font-medium text-[#07074D]"
+                  >
+                    Email
+                  </label>
+                  <input
+                    type="text"
+                    name="email"
+                    id="email"
+                    placeholder="Email Address"
+                    className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#500000] focus:shadow-md"
+                  />
+                </div>
+            <div className="mb-5">
               <label
                 className="mb-3 block text-base font-medium text-[#07074D]"
               >

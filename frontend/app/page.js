@@ -15,25 +15,44 @@ export default function Home() {
         <section className="bg-white rounded-lg shadow-lg p-9 mb-8 text-center">
           <h2 className="text-3xl font-semibold mb-4">Get Started</h2>
           <p className="text-lg text-gray-800 p-3">
-            Join our community today! Create an account or sign in to explore
-            our website.
+            Explore our tools!
           </p>
           <div className="mt-8 mb-8">
-            {/* <Link href="/SignUp" className="bg-aggie hover:bg-[#381717] text-white font-semibold px-6 py-6 rounded-xl mr-4 text-xl mr-9">
-              Create Account
-
-            </Link>
-            <Link href="/SignIn" className="bg-gray-500 hover:bg-gray-600 text-white font-semibold px-6 py-6 rounded-xl text-xl">
-              Sign In
-
-            </Link> */}
             
-            <Link href="/SignUp">
-              <button className="bg-aggie hover:bg-[#381717] outline-none text-white  btn btn-xs sm:btn-sm md:btn-md lg:btn-lg mr-9">Create Account</button>
+            <Link href="/Trends">
+              <button className="bg-aggie hover:bg-[#381717] outline-none text-white  btn btn-xs sm:btn-sm md:btn-md lg:btn-lg mr-9">Find Trends</button>
             </Link>
-            <Link href="/SignIn">
-              <button className="bg-gray-500 hover:bg-gray-600 outline-none text-white  btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">Sign In</button>
+            <Link href="/Search">
+              <button className="bg-gray-500 hover:bg-gray-600 outline-none text-white  btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">Find Ratings</button>
             </Link>
+          </div>
+        </section>
+
+        <section className="bg-white rounded-lg shadow-lg p-9 mb-8">
+        <h2 className="text-3xl font-semibold mb-4 text-center">How to Use ProfMatch</h2>
+          <div className="text-gray-900 text-lg leading-loose">
+              <h3 className="text-2xl font-semibold mb-2">Ratings Search</h3>
+              <p className="mb-4">
+                In the search page, you can enter a course, set your preferences, and then receive personalized
+                professor matches in a ranked table. Scores are scaled from zero to five, with a higher score
+                indicating a closer match to your rankings.
+              </p>
+              <p className="mb-4">
+                Setting a field to "not important" tells the algorithm to disregard that feature, meaning it 
+                will not be utilized in calculating the final professor match scores. 
+              </p>
+              <p className="mb-4">
+                If you set the "has a high grade distribution" property to anything except "not important" and set 
+                all other fields to "not impotant", you will get rankings based only on GPA. This is useful 
+                for comparisons done purely on grading. 
+              </p>
+
+              <h3 className="text-2xl font-semibold mt-6 mb-2">Ratings Trends</h3>
+              <p>
+                In the trends page, you can enter a course and set preferences to find visualizations detailing
+                professor ratings over past semesters. This provides additional insights into shifts, 
+                anomalies, and other circumstances. 
+              </p>
           </div>
         </section>
 
