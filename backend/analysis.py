@@ -1,9 +1,14 @@
 import pandas as pd
 
+
 def stats_for_project(course, subject_code, grade_importance,expected_importance,objective_importance,critical_importance,organization_importance,diverse_importance,feedback_importance):
     df = pd.read_csv('sections.csv')
 
     #Go through each column case by case
+
+    df = df[df["course_number"] == int(course)]
+    df = df[df["subject_code"] == subject_code]
+
     df['GPA'] = df.apply(lambda row: (row['a'] * 4.0 + row['b'] * 3.0 + row['c'] * 2.0 + row['d'] * 1.0 + row['f'] * 0.0 + row['q'] * 0.0) / (row['total_graded_students'] + row['q']) / 4.0, axis=1)
     df['expected'] = df.apply(lambda row: (row['expected_1'] * 1.0 + row['expected_2'] * 2.0 + row['expected_3'] * 3.0) / max(1, row['expected_1']+row['expected_2']+row['expected_3']) / 3.0, axis=1)
     df['objectives'] = df.apply(lambda row: (row['objectives_1'] * 1.0 + row['objectives_2'] * 2.0 + row['objectives_3'] * 3.0 + row['objectives_4'] *4.0) / max(1, row['objectives_1']+row['objectives_2']+row['objectives_3']+row['objectives_4']) / 4.0, axis=1)
@@ -15,9 +20,6 @@ def stats_for_project(course, subject_code, grade_importance,expected_importance
     keep_list = ['GPA', 'expected', 'objectives', 'criticalthinking', 'organizerranking', 'diverse', 'feedback', 'semester', 'year', 'subject_code', 'course_number', 'section_number', 'professor_name']
 
     df = df.loc[:, keep_list]
-
-    df = df[df["course_number"] == int(course)]
-    df = df[df["subject_code"] == subject_code]
 
     if df.empty:
         return df
@@ -47,6 +49,9 @@ def stats_for_project(course, subject_code, grade_importance,expected_importance
 def visualization_stats(course, subject_code, grade_importance,expected_importance,objective_importance,critical_importance,organization_importance,diverse_importance,feedback_importance):
     df = pd.read_csv('sections.csv')
 
+    df = df[df["course_number"] == int(course)]
+    df = df[df["subject_code"] == subject_code]
+
     #Go through each column case by case
     df['GPA'] = df.apply(lambda row: (row['a'] * 4.0 + row['b'] * 3.0 + row['c'] * 2.0 + row['d'] * 1.0 + row['f'] * 0.0 + row['q'] * 0.0) / (row['total_graded_students'] + row['q']) / 4.0, axis=1)
     df['expected'] = df.apply(lambda row: (row['expected_1'] * 1.0 + row['expected_2'] * 2.0 + row['expected_3'] * 3.0) / max(1, row['expected_1']+row['expected_2']+row['expected_3']) / 3.0, axis=1)
@@ -59,9 +64,6 @@ def visualization_stats(course, subject_code, grade_importance,expected_importan
     keep_list = ['GPA', 'expected', 'objectives', 'criticalthinking', 'organizerranking', 'diverse', 'feedback', 'semester', 'year', 'subject_code', 'course_number', 'section_number', 'professor_name']
 
     df = df.loc[:, keep_list]
-
-    df = df[df["course_number"] == int(course)]
-    df = df[df["subject_code"] == subject_code]
 
     if df.empty:
         return df
@@ -109,3 +111,5 @@ def visualization_stats(course, subject_code, grade_importance,expected_importan
 #dfs = (visualization_stats(304, 'MATH', 1,1,1,1,1,1,1))
 #for df in dfs:
 #    print(df)
+
+# print(stats_for_project(102, 'ENGR', 1,1,1,1,1,1,1))
