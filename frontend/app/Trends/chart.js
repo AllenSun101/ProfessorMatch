@@ -78,6 +78,7 @@ export default function Chart(props){
                 <Tooltip />
                 {profs.map((element, index) => (
                     <Line
+                        key={index}
                         type="monotone"
                         dataKey={element}
                         stroke={generateRandomColor()}
