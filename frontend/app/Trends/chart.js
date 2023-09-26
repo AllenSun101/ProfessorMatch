@@ -82,6 +82,7 @@ export default function Chart(props){
                         type="monotone"
                         dataKey={element}
                         stroke={generateRandomColor()}
+                        
                     />
                 ))}
             </LineChart>
