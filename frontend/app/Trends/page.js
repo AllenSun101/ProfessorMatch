@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+import Chart from './chart';
 
 async function fetchData(props) {
   var data = await axios.get(`http://127.0.0.1:5000/Visualizations_Fetch/${props.course}/${props.feedback}/${props.learn}/${props.expectations}/${props.critical}/${props.diverse}/${props.clear}/${props.grade}`);
@@ -8,7 +8,7 @@ async function fetchData(props) {
 }
 
 async function MapRatings(props) {
-  console.log(props);
+  //console.log(props);
   if (props.ratings == undefined) {
     return (
       <>
@@ -23,9 +23,9 @@ async function MapRatings(props) {
           <h1 className="text-3xl tracking-tight mb-12 text-center">Professor Trends Over Time for {props.course}</h1>
 
           <div className="block w-full overflow-x-auto">
-                {/*Graph instead of table, with widgets*/}
-                {props.ratings['Craig M. Spears']['FALL 2022']}
+                <Chart props={props.ratings}/>
           </div>
+          
         </div>
       </div>
     </div>
@@ -42,7 +42,7 @@ export default async function Trends(props) {
     professorRatings = await fetchData(results);
   }
 
-  console.log(professorRatings);
+  //console.log(professorRatings);
 
   return (
     <main className='bg-white'>
@@ -105,7 +105,7 @@ export default async function Trends(props) {
                   <li className="flex justify-center text-sm"><span className="absolute">Important</span></li>
                   <li className="flex justify-center text-sm"><span className="absolute">Very Important</span></li>
                 </ul>
-                <input type="range" name="learn" className="w-full" min="0" max="3" step="1" />
+                <input type="range" name="learn" min="0" max="3" defaultValue="2" className="range" step="1" />
               </div>
             </div>
 
@@ -122,7 +122,7 @@ export default async function Trends(props) {
                   <li className="flex justify-center text-sm"><span className="absolute">Important</span></li>
                   <li className="flex justify-center text-sm"><span className="absolute">Very Important</span></li>
                 </ul>
-                <input type="range" name="expectations" className="w-full" min="0" max="3" step="1" />
+                <input type="range" name="expectations" min="0" max="3" defaultValue="2" className="range" step="1" />
               </div>
             </div>
 
@@ -139,7 +139,7 @@ export default async function Trends(props) {
                   <li className="flex justify-center text-sm"><span className="absolute">Important</span></li>
                   <li className="flex justify-center text-sm"><span className="absolute">Very Important</span></li>
                 </ul>
-                <input type="range" name="critical" className="w-full" min="0" max="3" step="1" />
+                <input type="range" name="critical" min="0" max="3" defaultValue="2" className="range" step="1" />
               </div>
             </div>
 
@@ -156,7 +156,7 @@ export default async function Trends(props) {
                   <li className="flex justify-center text-sm"><span className="absolute">Important</span></li>
                   <li className="flex justify-center text-sm"><span className="absolute">Very Important</span></li>
                 </ul>
-                <input type="range" name="diverse" className="w-full" min="0" max="3" step="1" />
+                <input type="range" name="diverse" min="0" max="3" defaultValue="2" className="range" step="1" />
               </div>
             </div>
 
@@ -173,7 +173,7 @@ export default async function Trends(props) {
                   <li className="flex justify-center text-sm"><span className="absolute">Important</span></li>
                   <li className="flex justify-center text-sm"><span className="absolute">Very Important</span></li>
                 </ul>
-                <input type="range" name="clear" className="w-full" min="0" max="3" step="1" />
+                <input type="range" name="clear" min="0" max="3" defaultValue="2" className="range" step="1" />
               </div>
             </div>
 
@@ -190,7 +190,7 @@ export default async function Trends(props) {
                   <li className="flex justify-center text-sm"><span className="absolute">Important</span></li>
                   <li className="flex justify-center text-sm"><span className="absolute">Very Important</span></li>
                 </ul>
-                <input type="range" name="grade" className="w-full" min="0" max="3" step="1" />
+                <input type="range" name="grade" min="0" max="3" defaultValue="2" className="range" step="1" />
               </div>
             </div>
 

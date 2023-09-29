@@ -48,13 +48,11 @@ export default function Feedback() {
                 </div>
               </div>
             </div>
-
-            <div className="form-control w-full max-w-xl">
-              <label className="label">
-                <span className="label-text">Email</span>
-              </label>
-              <input type="text" name="entry.267290630" placeholder="Type here" className="input input-bordered w-full max-w-xl" required/>
-              <label className="label">
+            <div className="mb-5">
+              <label
+                className="mb-3 block text-base font-medium text-[#07074D]"
+              >
+                Message
               </label>
             </div>
 
