@@ -9,6 +9,9 @@ def stats_for_project(course, subject_code, grade_importance,expected_importance
     df = df[df["course_number"] == int(course)]
     df = df[df["subject_code"] == subject_code]
 
+    if df.empty:
+        return df
+
     df['GPA'] = df.apply(lambda row: (row['a'] * 4.0 + row['b'] * 3.0 + row['c'] * 2.0 + row['d'] * 1.0 + row['f'] * 0.0 + row['q'] * 0.0) / (row['total_graded_students'] + row['q']) / 4.0, axis=1)
     df['expected'] = df.apply(lambda row: (row['expected_1'] * 0.0 + row['expected_2'] * 1.0 + row['expected_3'] * 2.0) / max(1, row['expected_1']+row['expected_2']+row['expected_3']) / 2.0, axis=1)
     df['objectives'] = df.apply(lambda row: (row['objectives_1'] * 0.0 + row['objectives_2'] * 1.0 + row['objectives_3'] * 2.0 + row['objectives_4'] * 3.0) / max(1, row['objectives_1']+row['objectives_2']+row['objectives_3']+row['objectives_4']) / 3.0, axis=1)
@@ -18,11 +21,8 @@ def stats_for_project(course, subject_code, grade_importance,expected_importance
     df['feedback'] = df.apply(lambda row: (row['feedback_1'] * 0.0 + row['feedback_2'] * 1.0 + row['feedback_3'] * 2.0 + row['feedback_4'] * 3.0 + row['feedback_5'] * 4.0 + row['feedback_6'] * 5.0) / max(1, row['feedback_1']+row['feedback_2']+row['feedback_3']+row['feedback_4']+row['feedback_5']+row['feedback_6']) / 5.0, axis=1)
 
     keep_list = ['GPA', 'expected', 'objectives', 'criticalthinking', 'organizerranking', 'diverse', 'feedback', 'semester', 'year', 'subject_code', 'course_number', 'section_number', 'professor_name']
-
+    
     df = df.loc[:, keep_list]
-
-    if df.empty:
-        return df
         
     df['final_scoring'] = df.apply(lambda row: round((row['GPA'] * int(grade_importance) + row['expected'] * int(expected_importance) + row['objectives'] * int(objective_importance) + row['criticalthinking'] * int(critical_importance) + row['organizerranking'] * int(organization_importance) + row['diverse'] * int(diverse_importance) + row['feedback'] * int(feedback_importance)), 2), axis=1)
     
@@ -96,6 +96,8 @@ def visualization_stats(course, subject_code, grade_importance,expected_importan
     professor_names = df['professor_name'].unique()
 
     final_df['semester'] = pd.Categorical(df['semester'], categories=['SPRING', 'SUMMER', 'FALL'], ordered=True)
+    
+    ##############print(df[df['professor_name'] == "Dwight A. Roblyer"][["semester", 'year']])
 
     for professor_name in professor_names:
         professor_df = final_df[final_df['professor_name'] == professor_name]
@@ -111,8 +113,9 @@ def visualization_stats(course, subject_code, grade_importance,expected_importan
     return(professor_dfs)
 
 
-#dfs = (visualization_stats(304, 'MATH', 1,1,1,1,1,1,1))
-#for df in dfs:
-#    print(df)
+dfs = (visualization_stats(207, 'POLS', 1,1,1,1,1,1,1))
+for df in dfs:
+    print(df)
 
-# print(stats_for_project(107, 'CHEM', 1,0,0,0,0,0,0))
+# print(stats_for_project(207, 'POLS', 0,0,0,0,1,1,1))
+# Zero data for cols- replace with N/A
