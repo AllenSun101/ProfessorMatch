@@ -8,8 +8,6 @@ export default function Feedback() {
       <div className="flex items-center justify-center p-12">
 
         <div className="mx-auto w-full max-w-[550px]">
-          {/* <script type="text/javascript">var submitted=false</script>
-          <iframe name="hiddenConfirm" id="hiddenConfirm" style="display:none;" onLoad="if(submitted){window.location='/';}"></iframe> */}
           <form action="https://docs.google.com/forms/u/8/d/e/1FAIpQLSee3KgdHEfx50xxreT-FDF86Ri1WZD0s6dYOapOAHdvXG9Hwg/formResponse" method="POST">
             {/* <div className="-mx-3 flex flex-wrap"> */}
             {/* <div className="w-full px-3 sm:w-1/2">
@@ -48,11 +46,13 @@ export default function Feedback() {
                 </div>
               </div>
             </div>
-            <div className="mb-5">
-              <label
-                className="mb-3 block text-base font-medium text-[#07074D]"
-              >
-                Message
+
+            <div className="form-control w-full max-w-xl">
+              <label className="label">
+                <span className="label-text">Email</span>
+              </label>
+              <input type="text" name="entry.267290630" placeholder="Type here" className="input input-bordered w-full max-w-xl" required/>
+              <label className="label">
               </label>
             </div>
 
