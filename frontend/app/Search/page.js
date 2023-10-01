@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import axios from 'axios';
 
 
@@ -232,7 +231,7 @@ export default async function Search(props) {
               </div>
             </div>
 
-            <div>
+            <div className='text-center'>
               <input type="submit" value="Submit" className="hover:shadow-form rounded-md bg-[#500000] py-3 px-8 text-center text-base font-semibold text-white outline-none mx-auto" />
             </div>
           </form>
