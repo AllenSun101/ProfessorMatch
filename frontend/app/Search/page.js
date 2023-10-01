@@ -125,7 +125,7 @@ export default async function Search(props) {
                   <li className="flex justify-center text-sm"><span className="absolute">Important</span></li>
                   <li className="flex justify-center text-sm"><span className="absolute">Very Important</span></li>
                 </ul>
-                <input type="range" name="feedback" min="0" max="3" defaultValue="2" className="range" step="1" />
+                <input data-theme="cupcake" type="range" name="feedback" min="0" max="3" defaultValue="2" className="range" step="1" />
               </div>
 
             </div>
