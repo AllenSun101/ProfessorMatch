@@ -39,7 +39,16 @@ export default function About(){
 
                     <h3 className="text-2xl font-semibold mt-6 mb-2">Our Team</h3>
                     <p>
-                        Name + Bio?
+                        Neha Rajganesh
+                    </p>
+                    <p>
+                        Rachitha Shivakumar
+                    </p>
+                    <p>
+                        Allen Sun
+                    </p>
+                    <p>
+                        Randil Wijayananda
                     </p>
                 </div>
             </section>
