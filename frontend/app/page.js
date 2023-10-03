@@ -38,12 +38,12 @@ export default function Home() {
                 indicating a closer match to your rankings.
               </p>
               <p className="mb-4">
-                Setting a field to "not important" tells the algorithm to disregard that feature, meaning it 
+                Setting a field to &quot;not important&quot; tells the algorithm to disregard that feature, meaning it 
                 will not be utilized in calculating the final professor match scores. 
               </p>
               <p className="mb-4">
-                If you set the "has a high grade distribution" property to anything except "not important" and set 
-                all other fields to "not impotant", you will get rankings based only on GPA. This is useful 
+                If you set the &quot;has a high grade distribution&quot; property to anything except &quot;not important&quot; and set 
+                all other fields to &quot;not impotant&quot;, you will get rankings based only on GPA. This is useful 
                 for comparisons done purely on grading. 
               </p>
 

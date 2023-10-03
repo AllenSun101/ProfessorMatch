@@ -8,7 +8,7 @@ export default function NavBar() {
             <div className="navbar-start bg-aggie flex justify-between px-10 items-center py-2" style={{ height: '90px' }}>
                 <div className="flex items-center space-x-2">
                     <Link href={"/"}>
-                        <img
+                        <Image
                             src="https://brandguide.tamu.edu/assets/img/logos/tam-primary-mark-a.png"
                             alt="My Image"
                             width={300}
