@@ -3,7 +3,7 @@ import axios from 'axios';
 
 async function fetchData(props) {
   console.log(props);
-  var data = await axios.get(`http://127.0.0.1:5000/Search_Fetch/${props.course}/${props.feedback}/${props.learn}/${props.expectations}/${props.critical}/${props.diverse}/${props.clear}/${props.grade}`);
+  var data = await axios.get(`https://prof-match-backend.onrender.com/Search_Fetch/${props.course}/${props.feedback}/${props.learn}/${props.expectations}/${props.critical}/${props.diverse}/${props.clear}/${props.grade}`);
 
   return data.data;
 }

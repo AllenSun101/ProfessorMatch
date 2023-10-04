@@ -2,7 +2,7 @@ import axios from 'axios';
 import Chart from './chart';
 
 async function fetchData(props) {
-  var data = await axios.get(`http://127.0.0.1:5000/Visualizations_Fetch/${props.course}/${props.feedback}/${props.learn}/${props.expectations}/${props.critical}/${props.diverse}/${props.clear}/${props.grade}`);
+  var data = await axios.get(`https://prof-match-backend.onrender.com/Visualizations_Fetch/${props.course}/${props.feedback}/${props.learn}/${props.expectations}/${props.critical}/${props.diverse}/${props.clear}/${props.grade}`);
 
   return data.data;
 }
