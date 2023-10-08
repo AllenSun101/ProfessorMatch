@@ -19,12 +19,12 @@ export default function Home() {
           </p>
           <div className="mt-8 mb-8">
             
-            <Link href="/Trends">
-              <button className="bg-aggie hover:bg-[#381717] outline-none text-white btn lg:btn-lg mr-9">Find Trends</button>
-            </Link>
-            <Link href="/Search">
-              <button className="bg-gray-500 hover:bg-gray-600 outline-none text-white btn lg:btn-lg">Find Ratings</button>
-            </Link>
+          <Link href="/Trends">
+            <button className="bg-aggie hover:bg-[#381717] outline-none text-white btn lg:btn-lg sm:mb-2 sm:mr-9">Find Trends</button>
+          </Link>
+          <Link href="/Search">
+            <button className="bg-gray-500 hover:bg-gray-600 outline-none text-white btn lg:btn-lg sm:mb-2">Find Ratings</button>
+          </Link>
           </div>
         </section>
 
@@ -43,7 +43,7 @@ export default function Home() {
               </p>
               <p className="mb-4">
                 If you set the &quot;has a high grade distribution&quot; property to anything except &quot;not important&quot; and set 
-                all other fields to &quot;not impotant&quot;, you will get rankings based only on GPA. This is useful 
+                all other fields to &quot;not important&quot;, you will get rankings based only on GPA. This is useful 
                 for comparisons done purely on grading. 
               </p>
 
