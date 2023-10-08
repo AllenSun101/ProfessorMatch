@@ -40,6 +40,10 @@ export default function Chart(props){
 
         Object.entries(ratings).forEach(([semester, rating]) => {
 
+            if(rating === 0){
+                rating = "N/A";
+            }
+
             const containsValue = semesterRatings.some(obj => obj.name === semester);
 
             // if semester is found, then add rating 
@@ -81,8 +85,18 @@ export default function Chart(props){
     });
 
     function generateRandomColor() {
-        // Generate a random color in hexadecimal format
-        return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+        // Function to generate a random integer within a specific range
+        const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
+
+        // Set the ranges for red, green, and blue values (avoiding white)
+        const red = randomInt(50, 200); // Adjust the range as needed
+        const green = randomInt(50, 200);
+        const blue = randomInt(50, 200);
+
+        // Convert the values to hexadecimal format and concatenate
+        const color = `#${red.toString(16)}${green.toString(16)}${blue.toString(16)}`;
+
+        return color;
     }
     
 

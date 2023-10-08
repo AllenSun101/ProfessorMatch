@@ -57,7 +57,7 @@ export default async function Trends(props) {
               <label
                 className="mb-3 block text-base font-medium text-3xl text-[#07074D]"
               >
-                Enter the course name
+                (For Trends) Enter the course name:
               </label>
               <input
                 type="text"

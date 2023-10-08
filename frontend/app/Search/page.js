@@ -51,10 +51,10 @@ async function MapRatings(props) {
                     <td className={`border-t-0 px-6 align-middle border-l-0 border-r-0 text-md whitespace-nowrap p-4 text-center ${rating >= 4
                       ? 'text-green-500'
                       : rating >= 3
-                        ? 'text-yellow-500'
+                        ? 'text-yellow-500' : rating === 0 ? 'text-black'
                         : 'text-red-500'
                       }`}>
-                      {rating}
+                        {rating === 0 ? "N/A" : rating}
                     </td>
                   </tr>
                 ))}
@@ -96,7 +96,7 @@ export default async function Search(props) {
               <label
                 className="mb-3 block text-base font-medium text-3xl text-[#07074D]"
               >
-                Enter the course name
+                (For Search) Enter the course name:
               </label>
               <input
                 type="text"
