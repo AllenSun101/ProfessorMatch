@@ -118,11 +118,11 @@ export default async function Search(props) {
               </label>
 
               <div className="flex flex-col space-y-2 p-2">
-                <ul className="flex justify-between w-full px-10 mb-6">
-                  <li className="flex justify-center text-sm"><span className="absolute">Not Important</span></li>
-                  <li className="flex justify-center text-sm"><span className="absolute">Somewhat Important</span></li>
-                  <li className="flex justify-center text-sm"><span className="absolute">Important</span></li>
-                  <li className="flex justify-center text-sm"><span className="absolute">Very Important</span></li>
+                <ul className="flex justify-between flex-wrap w-full px-2 md:px-10 mb-6">
+                  <li className="flex justify-center text-sm mb-6 md:mb-2"><span className="absolute md:inline">Not&nbsp;<br className="md:hidden" />Important</span></li>
+                  <li className="flex justify-center text-sm mb-6 md:mb-2"><span className="absolute md:inline">Somewhat&nbsp;<br className="md:hidden" />Important</span></li>
+                  <li className="flex justify-center text-sm mb-6 md:mb-2"><span className="absolute">Important&nbsp;</span></li>
+                  <li className="flex justify-center text-sm mb-6 md:mb-2"><span className="absolute md:inline">Very&nbsp;<br className="md:hidden" />Important</span></li>
                 </ul>
                 <input data-theme="cupcake" type="range" name="feedback" min="0" max="3" defaultValue="2" className="range" step="1" />
               </div>
@@ -136,11 +136,11 @@ export default async function Search(props) {
                 Helps me learn concepts or skills
               </label>
               <div className="flex flex-col space-y-2 p-2">
-                <ul className="flex justify-between w-full px-10 mb-6">
-                  <li className="flex justify-center text-sm"><span className="absolute">Not Important</span></li>
-                  <li className="flex justify-center text-sm"><span className="absolute">Somewhat Important</span></li>
-                  <li className="flex justify-center text-sm"><span className="absolute">Important</span></li>
-                  <li className="flex justify-center text-sm"><span className="absolute">Very Important</span></li>
+                <ul className="flex justify-between flex-wrap w-full px-2 md:px-10 mb-6">
+                  <li className="flex justify-center text-sm mb-6 md:mb-2"><span className="absolute md:inline">Not&nbsp;<br className="md:hidden" />Important</span></li>
+                  <li className="flex justify-center text-sm mb-6 md:mb-2"><span className="absolute md:inline">Somewhat&nbsp;<br className="md:hidden" />Important</span></li>
+                  <li className="flex justify-center text-sm mb-6 md:mb-2"><span className="absolute">Important&nbsp;</span></li>
+                  <li className="flex justify-center text-sm mb-6 md:mb-2"><span className="absolute md:inline">Very&nbsp;<br className="md:hidden" />Important</span></li>
                 </ul>
                 <input type="range" name="learn" min="0" max="3" defaultValue="2" className="range" step="1" />
               </div>
@@ -153,11 +153,11 @@ export default async function Search(props) {
                 Has clear expectations
               </label>
               <div className="flex flex-col space-y-2 p-2">
-                <ul className="flex justify-between w-full px-[10px] mb-6">
-                  <li className="flex justify-center text-sm"><span className="absolute">Not Important</span></li>
-                  <li className="flex justify-center text-sm"><span className="absolute">Somewhat Important</span></li>
-                  <li className="flex justify-center text-sm"><span className="absolute">Important</span></li>
-                  <li className="flex justify-center text-sm"><span className="absolute">Very Important</span></li>
+                <ul className="flex justify-between flex-wrap w-full px-2 md:px-10 mb-6">
+                  <li className="flex justify-center text-sm mb-6 md:mb-2"><span className="absolute md:inline">Not&nbsp;<br className="md:hidden" />Important</span></li>
+                  <li className="flex justify-center text-sm mb-6 md:mb-2"><span className="absolute md:inline">Somewhat&nbsp;<br className="md:hidden" />Important</span></li>
+                  <li className="flex justify-center text-sm mb-6 md:mb-2"><span className="absolute">Important&nbsp;</span></li>
+                  <li className="flex justify-center text-sm mb-6 md:mb-2"><span className="absolute md:inline">Very&nbsp;<br className="md:hidden" />Important</span></li>
                 </ul>
                 <input type="range" name="expectations" min="0" max="3" defaultValue="2" className="range" step="1" />
               </div>
@@ -170,11 +170,11 @@ export default async function Search(props) {
                 Facilitates critical thinking
               </label>
               <div className="flex flex-col space-y-2 p-2">
-                <ul className="flex justify-between w-full px-[10px] mb-6">
-                  <li className="flex justify-center text-sm"><span className="absolute">Not Important</span></li>
-                  <li className="flex justify-center text-sm"><span className="absolute">Somewhat Important</span></li>
-                  <li className="flex justify-center text-sm"><span className="absolute">Important</span></li>
-                  <li className="flex justify-center text-sm"><span className="absolute">Very Important</span></li>
+                <ul className="flex justify-between flex-wrap w-full px-2 md:px-10 mb-6">
+                  <li className="flex justify-center text-sm mb-6 md:mb-2"><span className="absolute md:inline">Not&nbsp;<br className="md:hidden" />Important</span></li>
+                  <li className="flex justify-center text-sm mb-6 md:mb-2"><span className="absolute md:inline">Somewhat&nbsp;<br className="md:hidden" />Important</span></li>
+                  <li className="flex justify-center text-sm mb-6 md:mb-2"><span className="absolute">Important&nbsp;</span></li>
+                  <li className="flex justify-center text-sm mb-6 md:mb-2"><span className="absolute md:inline">Very&nbsp;<br className="md:hidden" />Important</span></li>
                 </ul>
                 <input type="range" name="critical" min="0" max="3" defaultValue="2" className="range" step="1" />
               </div>
@@ -187,11 +187,11 @@ export default async function Search(props) {
                 Promotes diverse ideas
               </label>
               <div className="flex flex-col space-y-2 p-2">
-                <ul className="flex justify-between w-full px-[10px] mb-6">
-                  <li className="flex justify-center text-sm"><span className="absolute">Not Important</span></li>
-                  <li className="flex justify-center text-sm"><span className="absolute">Somewhat Important</span></li>
-                  <li className="flex justify-center text-sm"><span className="absolute">Important</span></li>
-                  <li className="flex justify-center text-sm"><span className="absolute">Very Important</span></li>
+                <ul className="flex justify-between flex-wrap w-full px-2 md:px-10 mb-6">
+                  <li className="flex justify-center text-sm mb-6 md:mb-2"><span className="absolute md:inline">Not&nbsp;<br className="md:hidden" />Important</span></li>
+                  <li className="flex justify-center text-sm mb-6 md:mb-2"><span className="absolute md:inline">Somewhat&nbsp;<br className="md:hidden" />Important</span></li>
+                  <li className="flex justify-center text-sm mb-6 md:mb-2"><span className="absolute">Important&nbsp;</span></li>
+                  <li className="flex justify-center text-sm mb-6 md:mb-2"><span className="absolute md:inline">Very&nbsp;<br className="md:hidden" />Important</span></li>
                 </ul>
                 <input type="range" name="diverse" min="0" max="3" defaultValue="2" className="range" step="1" />
               </div>
@@ -204,11 +204,11 @@ export default async function Search(props) {
                 Organizes the course clearly
               </label>
               <div className="flex flex-col space-y-2 p-2">
-                <ul className="flex justify-between w-full px-[10px] mb-6">
-                  <li className="flex justify-center text-sm"><span className="absolute">Not Important</span></li>
-                  <li className="flex justify-center text-sm"><span className="absolute">Somewhat Important</span></li>
-                  <li className="flex justify-center text-sm"><span className="absolute">Important</span></li>
-                  <li className="flex justify-center text-sm"><span className="absolute">Very Important</span></li>
+                <ul className="flex justify-between flex-wrap w-full px-2 md:px-10 mb-6">
+                  <li className="flex justify-center text-sm mb-6 md:mb-2"><span className="absolute md:inline">Not&nbsp;<br className="md:hidden" />Important</span></li>
+                  <li className="flex justify-center text-sm mb-6 md:mb-2"><span className="absolute md:inline">Somewhat&nbsp;<br className="md:hidden" />Important</span></li>
+                  <li className="flex justify-center text-sm mb-6 md:mb-2"><span className="absolute">Important&nbsp;</span></li>
+                  <li className="flex justify-center text-sm mb-6 md:mb-2"><span className="absolute md:inline">Very&nbsp;<br className="md:hidden" />Important</span></li>
                 </ul>
                 <input type="range" name="clear" min="0" max="3" defaultValue="2" className="range" step="1" />
               </div>
@@ -221,11 +221,11 @@ export default async function Search(props) {
                 Has a high grade distribution
               </label>
               <div className="flex flex-col space-y-2 p-2">
-                <ul className="flex justify-between w-full px-[10px] mb-6">
-                  <li className="flex justify-center text-sm"><span className="absolute">Not Important</span></li>
-                  <li className="flex justify-center text-sm"><span className="absolute">Somewhat Important</span></li>
-                  <li className="flex justify-center text-sm"><span className="absolute">Important</span></li>
-                  <li className="flex justify-center text-sm"><span className="absolute">Very Important</span></li>
+                <ul className="flex justify-between flex-wrap w-full px-2 md:px-10 mb-6">
+                  <li className="flex justify-center text-sm mb-6 md:mb-2"><span className="absolute md:inline">Not&nbsp;<br className="md:hidden" />Important</span></li>
+                  <li className="flex justify-center text-sm mb-6 md:mb-2"><span className="absolute md:inline">Somewhat&nbsp;<br className="md:hidden" />Important</span></li>
+                  <li className="flex justify-center text-sm mb-6 md:mb-2"><span className="absolute">Important&nbsp;</span></li>
+                  <li className="flex justify-center text-sm mb-6 md:mb-2"><span className="absolute md:inline">Very&nbsp;<br className="md:hidden" />Important</span></li>
                 </ul>
                 <input type="range" name="grade" min="0" max="3" defaultValue="2" className="range" step="1" />
               </div>
