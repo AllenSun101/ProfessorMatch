@@ -20,7 +20,7 @@ export default function Home() {
           <div className="mt-8 mb-8">
             
           <Link href="/Trends">
-            <button className="bg-aggie hover:bg-[#381717] outline-none text-white btn lg:btn-lg sm:mb-6 sm:mr-9">Find Trends</button>
+            <button className="bg-aggie hover:bg-[#381717] outline-none text-white btn lg:btn-lg mb-4 sm:mb-2 sm:mr-9">Find Trends</button>
           </Link>
           <Link href="/Search">
             <button className="bg-gray-500 hover:bg-gray-600 outline-none text-white btn lg:btn-lg sm:mb-2">Find Ratings</button>
