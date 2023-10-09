@@ -98,6 +98,25 @@ export default function Chart(props){
 
         return color;
     }
+
+    const CustomTooltip = ({ active, payload, label }) => {
+        if (active && payload != undefined) {
+          // Custom sorting logic, for example, sorting by the 'value' in descending order
+            payload.sort((a, b) => b.value - a.value);
+          return (
+            <div className="custom-tooltip bg-white p-4 border border-gray-300">
+              <p>{`Semester: ${label}`}</p>
+              {payload.map((entry, index) => (
+                <p key={index} style={{ color: entry.color }}>
+                  {`${entry.name}: ${entry.value}`}
+                </p>
+              ))}
+            </div>
+          );
+        }
+      
+        return null;
+      };
     
 
     return(
@@ -127,7 +146,7 @@ export default function Chart(props){
                 margin={{ top: 5, right: 60, left: 5, bottom: 80 }}>
                 <XAxis dataKey="name" angle={-45} dy={45}/>
                 <YAxis domain={[0, 5]} tickCount={11} ticks={[0.0, 0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0]}/>
-                <Tooltip />
+                <Tooltip content={<CustomTooltip />} />
                 {profs.map((element, index) => (selectedLines.includes(index) && (
                     <Line
                         key={index}
