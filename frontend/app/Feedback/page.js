@@ -66,7 +66,7 @@ export default function Feedback() {
               </label>
             </div>
 
-            <button type="submit" className="btn btn-block hover:bg-aggie hover:text-white">submit</button>
+            <button type="submit" className="btn btn-block">submit</button>
 
             <div className="pb-24"></div>
 
