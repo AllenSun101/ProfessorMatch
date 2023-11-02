@@ -78,6 +78,22 @@ export default async function Search(props) {
 
   var professorRatings;
   if (results.course != undefined && results.course != '') {
+    // update results weightings for exponential
+
+    for (const field in results) {
+      if (results.hasOwnProperty(field) && field !== 'course') {
+          // Convert the value to an integer
+          const value = parseInt(results[field]);
+
+          // Update values based on the specified mapping
+          if (value === 2) {
+              results[field] = '3';
+          } else if (value === 3) {
+              results[field] = '9';
+          }
+      }
+    }
+
     professorRatings = await fetchData(results);
   }
 
